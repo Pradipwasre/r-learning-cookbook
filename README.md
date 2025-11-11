@@ -1,7 +1,5 @@
-# r-learning-cookbook
+# R-learning-cookbook
 Learning R programming with scratch.
-
-# R Learning Cookbook
 
 ### Day 1 – Introduction to R Programming
 **Topics covered**
