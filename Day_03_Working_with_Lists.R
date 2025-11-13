@@ -12,6 +12,7 @@
 # • How to add, update, and remove elements from a list
 # • Best practices (do's and don’ts) while working with lists
 
+
 # ------------------------------------------------------------
 # 1. Introduction to Lists
 # ------------------------------------------------------------
