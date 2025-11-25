@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>R Data Wrangling Tutorial – Line-by-Line with Outputs</title>
+  <style>
+    :root {
+      --bg: #f5f5f7;
+      --bg-alt: #ffffff;
+      --border: #d2d2d7;
+      --accent: #0071e3;
+      --accent-soft: #e5f1ff;
+      --text-main: #111111;
+      --text-muted: #555555;
+      --code-bg: #0b0c10;
+      --code-border: #2e2e33;
+      --badge-bg: #e5e5ea;
+      --output-bg: #0b1115;
+      --output-border: #1f2933;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      background: radial-gradient(circle at top left, #f9fafc 0, #f0f1f5 40%, #e8eaef 100%);
+      color: var(--text-main);
+      line-height: 1.5;
+    }
+
+    .page {
+      max-width: 1180px;
+      margin: 32px auto;
+      padding: 0 24px 40px;
+      display: grid;
+      grid-template-columns: 290px minmax(0, 1fr);
+      gap: 24px;
+    }
+
+    @media (max-width: 900px) {
+      .page {
+        grid-template-columns: 1fr;
+      }
+      .sidebar {
+        position: static;
+      }
+    }
+
+    .sidebar {
+      position: sticky;
+      top: 24px;
+      align-self: flex-start;
+      background: rgba(255,255,255,0.9);
+      backdrop-filter: blur(18px);
+      border-radius: 26px;
+      border: 1px solid rgba(210,210,215,0.9);
+      padding: 20px 18px 18px;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.06);
+    }
+
+    .logo {
+      font-weight: 600;
+      font-size: 18px;
+      letter-spacing: 0.03em;
+      margin-bottom: 4px;
+    }
+
+    .subtitle {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      background: var(--badge-bg);
+      padding: 4px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+    }
+
+    .pill span {
+      opacity: 0.7;
+    }
+
+    .sidebar-section-title {
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #6e6e73;
+      margin-top: 14px;
+      margin-bottom: 6px;
+    }
+
+    .toc {
+      list-style: none;
+      font-size: 13px;
+    }
+
+    .toc li {
+      margin-bottom: 4px;
+    }
+
+    .toc a {
+      text-decoration: none;
+      color: #1d1d1f;
+      padding: 4px 6px;
+      border-radius: 8px;
+      display: block;
+      border: 1px solid transparent;
+      transition: background 0.15s ease, border-color 0.15s ease, transform 0.1s ease;
+    }
+
+    .toc a:hover {
+      background: rgba(0,0,0,0.03);
+      border-color: rgba(0,0,0,0.05);
+      transform: translateY(-1px);
+    }
+
+    .toc a.active {
+      background: var(--accent-soft);
+      border-color: var(--accent);
+      color: #003c7e;
+      font-weight: 600;
+    }
+
+    .main {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .card {
+      background: var(--bg-alt);
+      border-radius: 26px;
+      padding: 20px 22px;
+      border: 1px solid rgba(210,210,215,0.9);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.04);
+    }
+
+    .card-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 8px;
+    }
+
+    .card-title {
+      font-size: 17px;
+      font-weight: 600;
+    }
+
+    .card-meta {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    p {
+      font-size: 14px;
+      color: #1d1d1f;
+      margin-bottom: 6px;
+    }
+
+    .highlight {
+      font-size: 13px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      background: #f5f5f7;
+      border: 1px dashed #d2d2d7;
+      margin-bottom: 8px;
+    }
+
+    ul {
+      padding-left: 18px;
+      margin-bottom: 6px;
+      font-size: 13px;
+    }
+
+    li + li {
+      margin-top: 2px;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 4px;
+      margin-bottom: 6px;
+    }
+
+    .tag {
+      font-size: 11px;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: #f5f5f7;
+      border: 1px solid #e5e5ea;
+    }
+
+    .code-card {
+      margin-top: 10px;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid var(--code-border);
+      background: var(--code-bg);
+      font-family: "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      font-size: 12px;
+    }
+
+    .code-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 6px 10px;
+      background: linear-gradient(90deg, #181a22, #111217);
+      border-bottom: 1px solid #20222b;
+      color: #e5e5ea;
+    }
+
+    .code-header-left {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .code-dots {
+      display: flex;
+      gap: 4px;
+    }
+
+    .code-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #ff5f57;
+    }
+
+    .code-dot:nth-child(2) {
+      background: #febc2e;
+    }
+
+    .code-dot:nth-child(3) {
+      background: #28c840;
+    }
+
+    .code-filename {
+      font-size: 11px;
+      opacity: 0.8;
+    }
+
+    .code-lang {
+      font-size: 10px;
+      opacity: 0.7;
+    }
+
+    pre {
+      margin: 0;
+      padding: 10px 12px;
+      overflow-x: auto;
+      color: #f5f5f7;
+      white-space: pre;
+    }
+
+    code {
+      font-family: inherit;
+    }
+
+    .output-card {
+      margin-top: 6px;
+      border-radius: 14px;
+      background: var(--output-bg);
+      border: 1px solid var(--output-border);
+      font-family: "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      font-size: 12px;
+      color: #e5e5ea;
+      overflow: hidden;
+    }
+
+    .output-header {
+      padding: 4px 10px;
+      border-bottom: 1px solid #111827;
+      background: #05080b;
+      font-size: 11px;
+      color: #9ca3af;
+    }
+
+    .output-body {
+      padding: 8px 10px;
+      white-space: pre;
+      overflow-x: auto;
+    }
+
+    .explain-title {
+      font-size: 12px;
+      font-weight: 600;
+      margin-top: 8px;
+      margin-bottom: 3px;
+    }
+
+    .explain-list {
+      font-size: 12px;
+      margin-bottom: 4px;
+    }
+
+    .inline-label {
+      font-weight: 600;
+      font-size: 12px;
+    }
+
+    .section-caption {
+      font-size: 12px;
+      color: #6e6e73;
+      margin-bottom: 4px;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="logo">R Data Wrangling</div>
+      <div class="subtitle">Line-by-line code, outputs, and explanations using tidyverse.</div>
+
+      <div class="pill">
+        <strong>Mode:</strong> <span>RStudio-style walkthrough</span>
+      </div>
+
+      <div class="sidebar-section-title">Sections</div>
+      <ul class="toc">
+        <li><a href="#intro" class="toc-link active">1. Overview</a></li>
+        <li><a href="#packages" class="toc-link">2. Load Packages</a></li>
+        <li><a href="#pipe" class="toc-link">3. Pipe Operator</a></li>
+        <li><a href="#mutate-types" class="toc-link">4. Convert Types</a></li>
+        <li><a href="#select-rename-separate" class="toc-link">5. Select · Rename · Separate</a></li>
+        <li><a href="#date-parts" class="toc-link">6. Extract Date Parts</a></li>
+        <li><a href="#filter-group-count" class="toc-link">7. Filter · Group · Count</a></li>
+        <li><a href="#full-pipeline" class="toc-link">8. Full Pipeline</a></li>
+        <li><a href="#key-functions" class="toc-link">9. Key Functions Summary</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main content -->
+    <main class="main">
+      <!-- Intro -->
+      <section id="intro" class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">R Data Wrangling Tutorial – Comprehensive Guide</div>
+            <div class="card-meta">Using tidyverse for real-world style client data cleaning and analysis.</div>
+          </div>
+        </div>
+
+        <p>This HTML page is designed like an RStudio walkthrough. For every important code block, you see:</p>
+        <ul>
+          <li>The exact code as you would type it in RStudio.</li>
+          <li>The output printed in the Console or visible in the data viewer.</li>
+          <li>A detailed explanation of what changed in the data after that line.</li>
+        </ul>
+
+        <div class="highlight">
+          Mental model: every step slightly reshapes your data. By the end, you will see a full pipeline that turns raw client records into a clean table ready for analysis.
+        </div>
+      </section>
+
+      <!-- 1. Loading Packages -->
+      <section id="packages" class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">1. Loading Required Packages</div>
+            <div class="card-meta">janitor, lubridate, tidyverse, readxl, tidyquant</div>
+          </div>
+        </div>
+
+        <p>In a real project, the first thing you do is load the libraries that give you the tools for cleaning and transforming data.</p>
+
+        <div class="code-card">
+          <div class="code-header">
+            <div class="code-header-left">
+              <div class="code-dots">
+                <span class="code-dot"></span>
+                <span class="code-dot"></span>
+                <span class="code-dot"></span>
+              </div>
+              <div class="code-filename">01_load_packages.R</div>
+            </div>
+            <div class="code-lang">R</div>
+          </div>
+          <pre><code>library(janitor)
+library(lubridate)
+library(tidyverse)
+library(readxl)
+library(tidyquant)</code></pre>
+        </div>
+
+        <div class="output-card">
+          <div class="output-header">Console (simplified)</div>
+          <div class="output-body"># Packages attach silently or with startup messages
+# Example:
+# ─ Attaching packages ───────────────── tidyverse 2.x ─
+# ✔ dplyr     ✔ readr
+# ✔ ggplot2   ✔ purrr
+# ...</div>
+        </div>
+
+        <div class="explain-title">What each package brings</div>
+        <ul class="explain-list">
+          <li><code>janitor</code>: cleaning column names, removing empty rows, quick tabulations.</li>
+          <li><code>lubridate</code>: easy parsing and manipulation of dates and times.</li>
+          <li><code>tidyverse</code>: the core data manipulation and visualization toolkit (dplyr, ggplot2, tidyr, etc.).</li>
+          <li><code>readxl</code>: reading Excel files (<code>.xlsx</code>, <code>.xls</code>) into data frames.</li>
+          <li><code>tidyquant</code>: tools for financial data, time series, and tidy integration with quant libraries.</li>
+        </ul>
+
+        <p>Nothing changes in your data yet. You are just preparing the toolbox for the work ahead.</p>
+      </section>
+
+      <!-- 2. Pipe operator -->
+      <section id="pipe" class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">2. The Pipe Operator (%&gt;%)</div>
+            <div class="card-meta">Make code read like a sentence from left to right.</div>
+          </div>
+        </div>
+
+        <p>The pipe <code>%&gt;%</code> takes the result of one step and feeds it into the next step as the first argument. This is the core idea behind tidyverse style.</p>
+
+        <div class="section-caption">Example 1: Basic arithmetic with pipe</div>
+        <div class="code-card">
+          <div class="code-header">
+            <div class="code-header-left">
+              <div class="code-dots">
+                <span class="code-dot"></span>
+                <span class="code-dot"></span>
+                <span class="code-dot"></span>
+              </div>
+              <div class="code-filename">02_pipe_arithmetic.R</div>
+            </div>
+            <div class="code-lang">R</div>
+          </div>
+          <pre><code>10 %&gt;% `*`(2) %&gt;% `+`(5)</code></pre>
+        </div>
+
+        <div class="output-card">
+          <div class="output-header">Console</div>
+          <div class="output-body">[1] 25</div>
+        </div>
+
+        <div class="explain-title">Step-by-step execution</div>
+        <ul class="explain-list">
+          <li>Start with the number <code>10</code>.</li>
+          <li><code>%&gt;% `*`(2)</code> means “take 10 and multiply by 2” → 20.</li>
+          <li><code>%&gt;% `+`(5)</code> means “take 20 and add 5” → 25.</li>
+          <li>The pipe makes the order of operations explicit from left to right.</li>
+        </ul>
+
+        <div class="section-caption">Example 2: Pipe with statistics</div>
+        <div class="code-card">
+          <div class="code-header">
+            <div class="code-header-left">
+              <div class="code-dots">
+                <span class="code-dot"></span>
+                <span class="code-dot"></span>
+                <span class="code-dot"></span>
+              </div>
+              <div class="code-filename">03_pipe_stats.R</div>
+            </div>
+            <div class="code-lang">R</div>
+          </div>
+          <pre><code>c(4, 9, 16) %&gt;% mean() %&gt;% sqrt()</code></pre>
+        </div>
+
+        <div class="output-card">
+          <div class="output-header">Console (approximate)</div>
+          <div class="output-body">[1] 3.11</div>
+        </div>
+
+        <ul class="explain-list">
+          <li><code>c(4, 9, 16)</code> creates a vector of three numbers.</li>
+          <li><code>%&gt;% mean()</code> computes their average: (4 + 9 + 16) / 3 ≈ 9.67.</li>
+          <li><code>%&gt;% sqrt()</code> takes the square root of the mean ≈ 3.11.</li>
+          <li>Without the pipe you would write <code>sqrt(mean(c(4, 9, 16)))</code>. The pipe removes nested brackets and reads linearly.</li>
+        </ul>
+      </section>
+
+      <!-- 4. mutate types -->
+      <section id="mutate-types" class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">3. Converting Data Types with mutate()</div>
+            <div class="card-meta">Fix dates, IDs, and categories so analysis becomes reliable.</div>
+          </div>
+        </div>
+
+        <p>Imagine we start with raw client data imported from Excel where everything comes in as text or numbers. Our goal is to convert each column to the correct type.</p>
+
+        <div class="section-caption">Before: raw structure (simplified)</div>
+        <div class="output-card">
+          <div class="output-header">Console – glimpse(clients_df)</div>
+          <div class="output-body">Rows: 350
+Columns: 8
+$ client_id        &lt;int&gt; 101, 102, 103, 104, ...
+$ dob              &lt;chr&gt; "09/01/2014", "7/25/2014", "10/02/2016", "2/27/2008", ...
+$ gender           &lt;chr&gt; "male", "female", "female", "male", ...
+$ race_ethnicity   &lt;chr&gt; "white", "white", "white", "white", ...
+$ county_state     &lt;chr&gt; "Buncome, North Carolina", "Buncome, North Carolina", ...
+$ admission_date   &lt;chr&gt; "01/03/2019", "02/12/2019", "2/18/2019", "03/01/2019", ...
+$ program_admitted &lt;chr&gt; "foster", "foster", "residential", "foster", ...
+$ ace_score        &lt;int&gt; 2, 3, 1, 3, 9, 9, 9, 7, ...</div>
+        </div>
+
+        <div class="code-card">
+          <div class="code-header">
+            <div class="code-header-left">
+              <div class="code-dots">
+                <span class="code-dot"></span>
+                <span class="code-dot"></span>
+                <span class="code-dot"></span>
+              </div>
+              <div class="code-filename">04_mutate_types.R</div>
+            </div>
+            <div class="code-lang">R</div>
+          </div>
+          <pre><code>clients_df &lt;- clients_df %&gt;%
+  mutate(
+    dob              = mdy(dob),
+    admission_date   = mdy(admission_date),
+    client_id        = as.character(client_id),
+    gender           = as.factor(gender),
+    race_ethnicity   = as.factor(race_ethnicity),
+    program_admitted = as.factor(program_admitted)
+  )</code></pre>
+        </div>
+
+        <div class="output-card">
+          <div class="output-header">Console – glimpse(clients_df) after mutate()</div>
+          <div class="output-body">Rows: 350
+Columns: 8
+$ client_id        &lt;chr&gt; "101", "102", "103", "104", ...
+$ dob              &lt;date&gt; 2014-09-01, 2014-07-25, 2016-10-02, 2008-02-27, ...
+$ gender           &lt;fct&gt; male, female, female, male, ...
+$ race_ethnicity   &lt;fct&gt; white, white, white, white, ...
+$ county_state     &lt;chr&gt; "Buncome, North Carolina", ...
+$ admission_date   &lt;date&gt; 2019-01-03, 2019-02-12, 2019-02-18, 2019-03-01, ...
+$ program_admitted &lt;fct&gt; foster, foster, residential, foster, ...
+$ ace_score        &lt;int&gt; 2, 3, 1, 3, 9, 9, 9, 7, ...</div>
+        </div>
+
+        <div class="explain-title">Line-by-line explanation</div>
+        <ul class="explain-list">
+          <li><code>clients_df &lt;- clients_df %&gt;%</code>  
+            Take the existing <code>clients_df</code> and send it into the pipeline. After the pipeline finishes, we overwrite <code>clients_df</code> with the cleaned version.</li>
+          <li><code>mutate(</code>  
+            <code>mutate()</code> creates new columns or modifies existing ones while preserving all other columns.</li>
+          <li><code>dob = mdy(dob)</code>  
+            Converts the <code>dob</code> column from character format like <code>"09/01/2014"</code> into a proper <code>Date</code> object using month-day-year order.</li>
+          <li><code>admission_date = mdy(admission_date)</code>  
+            Does the same conversion for <code>admission_date</code>, turning strings such as <code>"1/3/2019"</code> into <code>2019-01-03</code>.</li>
+          <li><code>client_id = as.character(client_id)</code>  
+            Converts numeric IDs (101, 102) into character values ("101", "102") so they are treated as identifiers, not quantities.</li>
+          <li><code>gender = as.factor(gender)</code>  
+            Turns strings like "male", "female" into categorical data. R stores possible levels internally and this is ideal for grouping and modeling.</li>
+          <li><code>race_ethnicity = as.factor(race_ethnicity)</code>  
+            Similar conversion so that different race/ethnicity values become categories.</li>
+          <li><code>program_admitted = as.factor(program_admitted)</code>  
+            Converts values like "foster", "residential" into factors for easier analysis and plotting by program type.</li>
+        </ul>
+
+        <p>After this step, your data becomes “analysis-ready”: dates behave like dates, categories behave like categories, and IDs are protected from accidental numeric operations.</p>
+      </section>
+
+      <!-- 5. select rename separate -->
+      <section id="select-rename-separate" class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">4. Select, Rename, and Separate Columns</div>
+            <div class="card-meta">Focus on relevant fields and split combined location information.</div>
+          </div>
+        </div>
+
+        <p>Next, you create a slimmer table with only the columns needed for admissions by place and time.</p>
+
+        <div class="section-caption">Starting point (after previous step)</div>
+        <div class="output-card">
+          <div class="output-header">Console – head(clients_df)</div>
+          <div class="output-body">  client_id       dob gender race_ethnicity           county_state admission_date program_admitted ace_score
+1      101 2014-09-01   male          white Buncome, North Carolina     2019-01-03          foster         2
+2      102 2014-07-25 female          white Buncome, North Carolina     2019-02-12          foster         3
+3      103 2016-10-02 female          white Henderson, North Carolina   2019-02-18      residential         1
+4      104 2008-02-27   male          white Buncome, North Carolina     2019-03-01          foster         3
+...</div>
+        </div>
+
+        <div class="code-card">
+          <div class="code-header">
+            <div class="code-header-left">
+              <div class="code-dots">
+                <span class="code-dot"></span>
+                <span class="code-dot"></span>
+                <span class="code-dot"></span>
+              </div>
+              <div class="code-filename">05_select_rename_separate.R</div>
+            </div>
+            <div class="code-lang">R</div>
+          </div>
+          <pre><code>clients_df &lt;- clients_df %&gt;% 
+  select(client_id, county_state, admission_date) %&gt;%
+  rename(
+    id       = client_id,
+    location = county_state
+  ) %&gt;%
+  separate(
+    col    = location,
+    into   = c("county", "state"),
+    sep    = ",",
+    remove = TRUE
+  )</code></pre>
+        </div>
+
+        <div class="output-card">
+          <div class="output-header">Console – head(clients_df) after pipeline</div>
+          <div class="output-body">   id    county          state admission_date
+1 101   Buncome North Carolina     2019-01-03
+2 102   Buncome North Carolina     2019-02-12
+3 103 Henderson North Carolina     2019-02-18
+4 104   Buncome North Carolina     2019-03-01
+...</div>
+        </div>
+
+        <div class="explain-title">Step-by-step explanation</div>
+        <ul class="explain-list">
+          <li><code>select(client_id, county_state, admission_date)</code>  
+            Drops all other columns and keeps only the ID, combined location, and admission date. This creates a focused dataset.</li>
+          <li><code>rename(id = client_id, location = county_state)</code>  
+            Gives shorter and clearer names:
+            <ul>
+              <li><code>client_id</code> becomes <code>id</code>.</li>
+              <li><code>county_state</code> becomes <code>location</code>.</li>
+            </ul>
+          </li>
+          <li><code>separate(col = location, into = c("county", "state"), sep = ",", remove = TRUE)</code>  
+            Splits the text <code>"Buncome, North Carolina"</code> into two new columns:
+            <ul>
+              <li><code>county</code>: <code>"Buncome"</code></li>
+              <li><code>state</code>: <code>"North Carolina"</code></li>
+            </ul>
+            The <code>remove = TRUE</code> argument drops the original <code>location</code> column after splitting, leaving cleaner separate fields.</li>
+        </ul>
+
+        <p>Now your table clearly separates geographic information, which is essential for grouping, filtering, and mapping.</p>
+      </section>
+
+      <!-- 6. date parts -->
+      <section id="date-parts" class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">5. Extracting Year, Quarter, and Month</div>
+            <div class="card-meta">Build calendar-based features for time series style analysis.</div>
+          </div>
+        </div>
+
+        <p>We want to understand admissions over time, so we derive year, quarter, and month from the admission date.</p>
+
+        <div class="code-card">
+          <div class="code-header">
+            <div class="code-header-left">
+              <div class="code-dots">
+                <span class="code-dot"></span>
+                <span class="code-dot"></span>
+                <span class="code-dot"></span>
+              </div>
+              <div class="code-filename">06_extract_dates.R</div>
+            </div>
+            <div class="code-lang">R</div>
+          </div>
+          <pre><code>clients_df &lt;- clients_df %&gt;%
+  mutate(
+    adm_year    = year(admission_date),
+    adm_quarter = quarter(admission_date),
+    adm_month   = month(admission_date, label = TRUE)
+  )</code></pre>
+        </div>
+
+        <div class="output-card">
+          <div class="output-header">Console – head(clients_df)</div>
+          <div class="output-body">   id    county          state admission_date adm_year adm_quarter adm_month
+1 101   Buncome North Carolina     2019-01-03     2019           1       Jan
+2 102   Buncome North Carolina     2019-02-12     2019           1       Feb
+3 103 Henderson North Carolina     2019-02-18     2019           1       Feb
+4 104   Buncome North Carolina     2019-03-01     2019           1       Mar
+...</div>
+        </div>
+
+        <div class="explain-title">How each new column is constructed</div>
+        <ul class="explain-list">
+          <li><code>adm_year = year(admission_date)</code>  
+            Extracts the four-digit year from each date. For <code>2019-01-03</code> you get <code>2019</code>.</li>
+          <li><code>adm_quarter = quarter(admission_date)</code>  
+            Converts each date into a quarter number:
+            <ul>
+              <li>1 = January–March</li>
+              <li>2 = April–June</li>
+              <li>3 = July–September</li>
+              <li>4 = October–December</li>
+            </ul>
+            So <code>2019-01-03</code> → quarter <code>1</code>.</li>
+          <li><code>adm_month = month(admission_date, label = TRUE)</code>  
+            Extracts the month and returns an abbreviated name like <code>Jan</code>, <code>Feb</code>, <code>Mar</code>. This is more readable in graphs and tables than numeric months.</li>
+        </ul>
+
+        <p>These derived columns make it very easy to group and filter by year, quarter, or month in the next steps.</p>
+      </section>
+
+      <!-- 7. filter group count -->
+      <section id="filter-group-count" class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">6. Filter, Group, and Count</div>
+            <div class="card-meta">Turn cleaned data into business insight by aggregating admissions.</div>
+          </div>
+        </div>
+
+        <p>Now we use the cleaned and enriched table to answer a real question: how many admissions happened in each county and quarter of a given year?</p>
+
+        <div class="code-card">
+          <div class="code-header">
+            <div class="code-header-left">
+              <div class="code-dots">
+                <span class="code-dot"></span>
+                <span class="code-dot"></span>
+                <span class="code-dot"></span>
+              </div>
+              <div class="code-filename">07_filter_group_count.R</div>
+            </div>
+            <div class="code-lang">R</div>
+          </div>
+          <pre><code>clients_2020_by_quarter &lt;- clients_df %&gt;% 
+  filter(adm_year == 2020) %&gt;%
+  group_by(county, adm_quarter) %&gt;% 
+  count(sort = TRUE) %&gt;% 
+  ungroup()</code></pre>
+        </div>
+
+        <div class="output-card">
+          <div class="output-header">Console – clients_2020_by_quarter</div>
+          <div class="output-body"># A tibble: 4 × 3
+  county    adm_quarter     n
+  &lt;chr&gt;           &lt;int&gt; &lt;int&gt;
+1 Buncome             1    45
+2 Henderson           1    38
+3 Buncome             2    32
+4 Henderson           3    28</div>
+        </div>
+
+        <div class="explain-title">Step-by-step breakdown</div>
+        <ul class="explain-list">
+          <li><code>filter(adm_year == 2020)</code>  
+            Keeps only the rows where admissions happened in the year 2020. This slices your table down to that single year.</li>
+          <li><code>group_by(county, adm_quarter)</code>  
+            Groups data by county and quarter. Every later operation inside this pipeline will run separately for each county–quarter combination.</li>
+          <li><code>count(sort = TRUE)</code>  
+            Counts how many rows (admissions) are in each group. <code>sort = TRUE</code> orders the result, showing the most frequent groups first.</li>
+          <li><code>ungroup()</code>  
+            Removes the grouping so that future operations on this object are not accidentally grouped.</li>
+        </ul>
+
+        <p><span class="inline-label">Business insight:</span> you can immediately see where demand is highest, which helps with staffing, budgeting, and capacity planning by location and time of year.</p>
+      </section>
+
+      <!-- Full pipeline -->
+      <section id="full-pipeline" class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">7. Full Real-World Pipeline</div>
+            <div class="card-meta">From messy Excel to structured admissions summary.</div>
+          </div>
+        </div>
+
+        <p>Now we combine the key steps into one clean pipeline, like you would do in a real project script.</p>
+
+        <div class="code-card">
+          <div class="code-header">
+            <div class="code-header-left">
+              <div class="code-dots">
+                <span class="code-dot"></span>
+                <span class="code-dot"></span>
+                <span class="code-dot"></span>
+              </div>
+              <div class="code-filename">08_full_pipeline.R</div>
+            </div>
+            <div class="code-lang">R</div>
+          </div>
+          <pre><code># 1. Load packages
+library(janitor)
+library(lubridate)
+library(tidyverse)
+library(readxl)
+library(tidyquant)
+
+# 2. Read data from Excel (example path)
+clients_df &lt;- read_excel("data/clients_raw.xlsx") %&gt;%
+  clean_names()   # from janitor, standardizes column names
+
+# 3. Fix types
+clients_df &lt;- clients_df %&gt;%
+  mutate(
+    dob              = mdy(dob),
+    admission_date   = mdy(admission_date),
+    client_id        = as.character(client_id),
+    gender           = as.factor(gender),
+    race_ethnicity   = as.factor(race_ethnicity),
+    program_admitted = as.factor(program_admitted)
+  )
+
+# 4. Keep and reshape location + date
+clients_df &lt;- clients_df %&gt;%
+  select(client_id, county_state, admission_date, ace_score) %&gt;%
+  rename(
+    id       = client_id,
+    location = county_state
+  ) %&gt;%
+  separate(
+    col    = location,
+    into   = c("county", "state"),
+    sep    = ",",
+    remove = TRUE
+  ) %&gt;%
+  mutate(
+    adm_year    = year(admission_date),
+    adm_quarter = quarter(admission_date),
+    adm_month   = month(admission_date, label = TRUE)
+  )
+
+# 5. Summary: admissions by county and quarter in 2020
+clients_2020_by_quarter &lt;- clients_df %&gt;%
+  filter(adm_year == 2020) %&gt;%
+  group_by(county, adm_quarter) %&gt;%
+  count(sort = TRUE) %&gt;%
+  ungroup()</code></pre>
+        </div>
+
+        <div class="output-card">
+          <div class="output-header">Console – summary objects</div>
+          <div class="output-body">glimpse(clients_df)
+# Clean, typed table with id, county, state, admission_date, ace_score, adm_year, adm_quarter, adm_month
+
+clients_2020_by_quarter
+# Aggregated counts by county and quarter for 2020</div>
+        </div>
+      </section>
+
+      <!-- Key functions summary -->
+      <section id="key-functions" class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">8. Key Functions Summary</div>
+            <div class="card-meta">Reference table for your students.</div>
+          </div>
+        </div>
+
+        <div class="highlight">
+          Use this as a quick reference while practicing. For each function, try rewriting part of the pipeline on your own.
+        </div>
+
+        <table style="width:100%; border-collapse:collapse; font-size:13px;">
+          <thead>
+            <tr>
+              <th style="text-align:left; padding:6px 4px; border-bottom:1px solid #e5e5ea;">Function</th>
+              <th style="text-align:left; padding:6px 4px; border-bottom:1px solid #e5e5ea;">Purpose</th>
+              <th style="text-align:left; padding:6px 4px; border-bottom:1px solid #e5e5ea;">Example</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="padding:4px 4px;"><code>mutate()</code></td>
+              <td style="padding:4px 4px;">Create or modify columns</td>
+              <td style="padding:4px 4px;"><code>mutate(adm_year = year(admission_date))</code></td>
+            </tr>
+            <tr>
+              <td style="padding:4px 4px;"><code>select()</code></td>
+              <td style="padding:4px 4px;">Choose specific columns</td>
+              <td style="padding:4px 4px;"><code>select(id, county, admission_date)</code></td>
+            </tr>
+            <tr>
+              <td style="padding:4px 4px;"><code>rename()</code></td>
+              <td style="padding:4px 4px;">Change column names</td>
+              <td style="padding:4px 4px;"><code>rename(id = client_id)</code></td>
+            </tr>
+            <tr>
+              <td style="padding:4px 4px;"><code>separate()</code></td>
+              <td style="padding:4px 4px;">Split one column into multiple</td>
+              <td style="padding:4px 4px;"><code>separate(location, c("county", "state"), ",")</code></td>
+            </tr>
+            <tr>
+              <td style="padding:4px 4px;"><code>filter()</code></td>
+              <td style="padding:4px 4px;">Keep rows matching conditions</td>
+              <td style="padding:4px 4px;"><code>filter(adm_year == 2020)</code></td>
+            </tr>
+            <tr>
+              <td style="padding:4px 4px;"><code>group_by()</code></td>
+              <td style="padding:4px 4px;">Group data for aggregation</td>
+              <td style="padding:4px 4px;"><code>group_by(county, adm_quarter)</code></td>
+            </tr>
+            <tr>
+              <td style="padding:4px 4px;"><code>count()</code></td>
+              <td style="padding:4px 4px;">Quickly count rows in each group</td>
+              <td style="padding:4px 4px;"><code>count(sort = TRUE)</code></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    // Smooth scrolling for sidebar links
+    document.querySelectorAll('.toc-link').forEach(function (link) {
+      link.addEventListener('click', function (event) {
+        event.preventDefault();
+        var targetId = this.getAttribute('href').slice(1);
+        var target = document.getElementById(targetId);
+        if (!target) return;
+        window.scrollTo({
+          top: target.offsetTop - 20,
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // Active section highlighting
+    var sections = Array.from(document.querySelectorAll('main section'));
+    var links = Array.from(document.querySelectorAll('.toc-link'));
+
+    function onScroll() {
+      var scrollPos = window.scrollY || window.pageYOffset;
+      var currentId = null;
+
+      sections.forEach(function (section) {
+        var offset = section.offsetTop - 100;
+        if (scrollPos >= offset) {
+          currentId = section.id;
+        }
+      });
+
+      links.forEach(function (link) {
+        if (link.getAttribute('href').slice(1) === currentId) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+      });
+    }
+
+    document.addEventListener('scroll', onScroll);
+    onScroll();
+  </script>
+</body>
+</html>
