@@ -1,0 +1,351 @@
+﻿client_id,dob,gender,race_ethnicity,county_state,admission_date,program_admitted,ace_score
+101,9/1/2014,male,white,"Buncome, North Carolina",1/3/2019,foster,2
+102,7/25/2014,female,white,"Buncome, North Carolina",2/12/2019,foster,3
+103,10/2/2016,female,white,"Henderson, North Carolina",2/18/2019,residential,1
+104,2/27/2008,male,white,"Buncome, North Carolina",3/1/2019,foster,3
+105,9/7/2014,male,white,"Buncome, North Carolina",3/8/2019,foster,9
+106,8/2/2005,female,latino,"Haywood, North Carolina",3/14/2019,foster,9
+107,2/18/2008,male,black,"Buncome, North Carolina",3/15/2019,residential,9
+108,1/23/2008,female,black,"Haywood, North Carolina",3/24/2019,foster,7
+109,11/15/2009,female,asian,"Madison, North Carolina",3/28/2019,ther. foster,5
+110,9/4/2014,male,amer. Ind.,"Buncome, North Carolina",3/29/2019,foster,1
+111,5/17/2013,male,white,"Henderson, North Carolina",3/30/2019,residential,7
+112,1/20/2008,female,white,"Buncome, North Carolina",4/10/2019,foster,6
+113,7/31/2014,female,white,"Buncome, North Carolina",4/17/2019,foster,5
+114,3/24/2013,male,white,"Madison, North Carolina",4/20/2019,foster,4
+115,1/11/2008,female,latino,"Buncome, North Carolina",4/21/2019,residential,8
+116,9/17/2012,male,white,"Henderson, North Carolina",4/23/2019,foster,7
+117,9/26/2008,female,black,"Henderson, North Carolina",4/30/2019,foster,6
+118,9/14/2014,male,black,"Haywood, North Carolina",5/3/2019,foster,5
+119,11/10/2005,male,asian,"Madison, North Carolina",5/7/2019,foster,4
+120,10/11/2012,female,amer. Ind.,"Buncome, North Carolina",5/8/2019,residential,8
+121,9/11/2014,male,white,"Haywood, North Carolina",5/11/2019,foster,7
+122,4/13/2015,female,white,"Madison, North Carolina",5/14/2019,ther. foster,1
+123,2/24/2008,male,white,"Buncome, North Carolina",5/18/2019,foster,5
+124,3/15/2017,male,latino,"Buncome, North Carolina",5/19/2019,residential,3
+125,11/2/2011,female,white,"Henderson, North Carolina",5/24/2019,foster,8
+126,3/1/2008,male,white,"Haywood, North Carolina",5/25/2019,foster,7
+127,3/19/2009,female,latino,"Madison, North Carolina",5/30/2019,foster,6
+128,9/10/2017,male,black,"Buncome, North Carolina",6/1/2019,residential,2
+129,10/2/2012,female,asian,"Haywood, North Carolina",6/3/2019,foster,4
+130,5/17/2006,male,amer. Ind.,"Henderson, North Carolina",6/6/2019,foster,8
+131,1/28/2003,female,white,"Henderson, North Carolina",6/7/2019,residential,6
+132,6/23/2007,female,white,"Madison, North Carolina",6/7/2019,foster,7
+133,2/5/2017,female,white,"Buncome, North Carolina",6/8/2019,foster,4
+134,2/21/2008,male,white,"Buncome, North Carolina",6/8/2019,foster,5
+135,8/4/2014,female,white,"Haywood, North Carolina",6/17/2019,foster,8
+136,10/1/2015,female,white,"Madison, North Carolina",6/21/2019,residential,7
+137,3/6/2015,male,black,"Madison, North Carolina",6/23/2019,foster,3
+138,12/17/2008,female,latino,"Buncome, North Carolina",6/24/2019,ther. foster,5
+139,6/30/2003,female,asian,"Madison, North Carolina",6/28/2019,foster,4
+140,3/5/2005,male,amer. Ind.,"Henderson, North Carolina",6/30/2019,residential,7
+141,10/30/2010,male,white,"Madison, North Carolina",6/30/2019,foster,8
+142,4/11/2015,female,white,"Henderson, North Carolina",7/4/2019,foster,2
+143,2/19/2008,male,white,"Buncome, North Carolina",7/10/2019,foster,4
+144,3/2/2015,male,white,"Haywood, North Carolina",7/10/2019,ther. foster,4
+145,8/3/2017,female,white,"Buncome, North Carolina",7/11/2019,residential,3
+146,12/30/2014,male,white,"Madison, North Carolina",7/14/2019,foster,7
+147,10/11/2005,female,black,"Buncome, North Carolina",7/15/2019,foster,5
+148,2/28/2008,male,black,"Haywood, North Carolina",7/15/2019,foster,6
+149,9/20/2018,male,latino,"Henderson, North Carolina",7/17/2019,residential,2
+150,10/13/2010,male,amer. Ind.,"Buncome, North Carolina",7/22/2019,foster,8
+151,10/2/2012,male,white,"Henderson, North Carolina",7/24/2019,ther. foster,7
+152,11/27/2004,female,white,"Henderson, North Carolina",7/28/2019,foster,6
+153,1/12/2008,female,white,"Buncome, North Carolina",8/2/2019,residential,5
+154,1/21/2008,female,white,"Haywood, North Carolina",8/4/2019,foster,4
+155,5/8/2018,female,white,"McDowell, North Carolina",8/6/2019,foster,2
+156,1/23/2015,female,white,"Haywood, North Carolina",8/7/2019,residential,6
+157,5/24/2012,male,black,"Madison, North Carolina",8/7/2019,foster,7
+158,9/28/2009,female,black,"Buncome, North Carolina",8/11/2019,foster,4
+159,3/16/2004,female,asian,"Madison, North Carolina",8/11/2019,foster,5
+160,9/5/2014,male,amer. Ind.,"Buncome, North Carolina",8/12/2019,foster,2
+161,9/18/2017,male,white,"Henderson, North Carolina",8/17/2019,residential,3
+162,8/13/2018,female,white,"Henderson, North Carolina",8/17/2019,foster,1
+163,9/27/2008,female,white,"Henderson, North Carolina",8/25/2019,foster,5
+164,9/15/2013,male,white,"Haywood, North Carolina",8/27/2019,ther. foster,4
+165,11/5/2010,male,latino,"Madison, North Carolina",8/31/2019,foster,8
+166,2/27/2012,female,white,"Buncome, North Carolina",9/1/2019,residential,7
+167,7/24/2007,male,black,"McDowell, North Carolina",9/3/2019,foster,6
+168,9/12/2015,male,black,"Haywood, North Carolina",9/5/2019,foster,1
+169,7/21/2005,male,asian,"Buncome, North Carolina",9/9/2019,foster,4
+170,2/25/2012,male,amer. Ind.,"Buncome, North Carolina",9/12/2019,residential,8
+171,5/10/2010,male,white,"Henderson, North Carolina",9/17/2019,foster,7
+172,12/18/2016,female,white,"Henderson, North Carolina",9/18/2019,foster,2
+173,11/9/2016,male,white,"Henderson, North Carolina",9/23/2019,residential,4
+174,3/14/2014,female,white,"McDowell, North Carolina",9/23/2019,foster,5
+175,8/5/2015,female,white,"Haywood, North Carolina",9/28/2019,foster,7
+176,8/27/2018,female,white,"Haywood, North Carolina",9/28/2019,ther. foster,2
+177,9/28/2010,female,black,"Madison, North Carolina",10/2/2019,foster,6
+178,2/22/2008,male,black,"Buncome, North Carolina",10/3/2019,residential,5
+179,11/23/2011,female,asian,"Buncome, North Carolina",10/5/2019,foster,4
+180,3/6/2010,male,latino,"Henderson, North Carolina",10/11/2019,foster,8
+181,7/6/2004,female,white,"Buncome, North Carolina",10/14/2019,foster,7
+182,3/3/2016,male,white,"Haywood, North Carolina",10/21/2019,foster,2
+183,11/16/2017,female,white,"Henderson, North Carolina",10/25/2019,foster,2
+184,5/26/2012,male,white,"Madison, North Carolina",10/25/2019,foster,4
+185,2/4/2014,male,white,"McDowell, North Carolina",10/25/2019,residential,5
+186,10/4/2009,female,white,"Buncome, North Carolina",10/26/2019,foster,7
+187,2/20/2008,male,black,"Buncome, North Carolina",11/2/2019,residential,6
+188,2/29/2008,male,black,"Haywood, North Carolina",11/5/2019,foster,5
+189,9/9/2013,male,asian,"Buncome, North Carolina",11/12/2019,foster,4
+190,10/3/2015,female,amer. Ind.,"McDowell, North Carolina",11/17/2019,foster,4
+191,9/30/2009,female,white,"Henderson, North Carolina",11/18/2019,residential,7
+192,8/6/2015,female,white,"Haywood, North Carolina",11/28/2019,foster,4
+193,2/1/2007,male,white,"Madison, North Carolina",11/29/2019,foster,5
+194,4/18/2012,female,white,"Madison, North Carolina",12/2/2019,foster,4
+195,4/12/2017,male,white,"Buncome, North Carolina",12/3/2019,residential,2
+196,9/29/2008,female,white,"Madison, North Carolina",12/9/2019,foster,7
+197,1/22/2008,female,black,"Haywood, North Carolina",12/10/2019,foster,6
+198,9/20/2015,female,black,"Buncome, North Carolina",12/17/2019,foster,2
+199,9/22/2013,female,asian,"Madison, North Carolina",12/18/2019,residential,4
+200,7/19/2006,female,amer. Ind.,"Buncome, North Carolina",12/20/2019,foster,8
+201,9/19/2013,male,white,"Henderson, North Carolina",12/23/2019,foster,7
+202,8/26/2015,male,white,"McDowell, North Carolina",12/25/2019,foster,3
+203,9/13/2014,male,white,"Haywood, North Carolina",12/29/2019,foster,5
+204,5/16/2016,male,white,"Haywood, North Carolina",1/2/2020,residential,3
+205,6/7/2015,male,white,"Polk, North Carolina",1/4/2020,foster,8
+206,2/26/2008,male,latino,"Buncome, North Carolina",1/5/2020,foster,7
+207,11/6/2013,male,black,"Madison, North Carolina",1/6/2020,foster,6
+208,6/28/2006,female,black,"Buncome, North Carolina",1/7/2020,residential,5
+209,10/23/2010,male,asian,"Rutherford, North Carolina",1/8/2020,foster,8
+210,7/15/2015,other,amer. Ind.,"Burke, North Carolina",1/8/2020,foster,4
+211,8/29/2017,female,white,"Madison, North Carolina",1/11/2020,residential,1
+212,6/13/2013,female,white,"Henderson, North Carolina",1/11/2020,foster,7
+213,7/21/2012,female,white,"Transylvania, North Carolina",1/12/2020,foster,4
+214,12/10/2018,male,white,"McDowell, North Carolina",1/12/2020,foster,4
+215,7/23/2009,male,white,"Madison, North Carolina",1/13/2020,foster,8
+216,12/23/2015,female,white,"Haywood, North Carolina",1/21/2020,residential,4
+217,6/6/2013,other,black,"Burke, North Carolina",1/24/2020,foster,6
+218,2/20/2011,female,black,"Buncome, North Carolina",1/25/2020,foster,4
+219,3/18/2009,female,asian,"Madison, North Carolina",1/25/2020,foster,5
+220,2/16/2013,male,amer. Ind.,"Buncome, North Carolina",1/26/2020,residential,8
+221,9/21/2009,male,white,"Haywood, North Carolina",1/28/2020,foster,6
+222,1/21/2017,female,white,"Rutherford, North Carolina",1/28/2020,foster,2
+223,3/21/2009,female,white,"McDowell, North Carolina",1/29/2020,foster,5
+224,6/30/2010,female,white,"Madison, North Carolina",2/1/2020,foster,4
+225,4/11/2011,female,white,"Rutherford, North Carolina",2/3/2020,residential,8
+226,8/15/2013,male,white,"Madison, North Carolina",2/4/2020,foster,7
+227,5/16/2016,male,latino,"Madison, North Carolina",2/6/2020,foster,4
+228,10/10/2018,male,black,"Transylvania, North Carolina",2/14/2020,foster,1
+229,8/6/2014,female,asian,"Haywood, North Carolina",2/15/2020,residential,4
+230,1/12/2010,male,amer. Ind.,"McDowell, North Carolina",2/17/2020,foster,8
+231,4/10/2014,female,white,"Polk, North Carolina",2/19/2020,foster,6
+232,9/14/2017,female,white,"McDowell, North Carolina",2/19/2020,foster,4
+233,7/18/2014,male,white,"Buncome, North Carolina",2/20/2020,residential,5
+234,1/19/2008,female,white,"Buncome, North Carolina",2/22/2020,foster,4
+235,10/20/2015,male,white,"Rutherford, North Carolina",2/23/2020,foster,2
+236,10/24/2011,female,white,"Transylvania, North Carolina",2/23/2020,ther. foster,8
+237,3/7/2003,male,black,"Henderson, North Carolina",2/28/2020,residential,6
+238,7/21/2016,male,black,"McDowell, North Carolina",3/5/2020,foster,2
+239,7/2/2015,male,latino,"Rutherford, North Carolina",3/8/2020,foster,4
+240,3/4/2006,male,amer. Ind.,"Haywood, North Carolina",3/9/2020,foster,8
+241,6/7/2015,female,white,"Polk, North Carolina",3/11/2020,foster,5
+242,10/3/2010,other,white,"Burke, North Carolina",3/11/2020,foster,6
+243,10/23/2009,female,white,"Buncome, North Carolina",3/11/2020,residential,7
+244,11/6/2006,male,white,"Madison, North Carolina",3/13/2020,foster,4
+245,1/9/2013,female,white,"Buncome, North Carolina",3/14/2020,foster,8
+246,3/2/2012,male,white,"Polk, North Carolina",3/17/2020,residential,7
+247,11/9/2005,male,black,"Madison, North Carolina",3/20/2020,foster,6
+248,8/23/2014,female,black,"Rutherford, North Carolina",3/28/2020,ther. foster,5
+249,5/21/2013,female,asian,"Buncome, North Carolina",3/29/2020,foster,4
+250,12/30/2008,male,amer. Ind.,"Buncome, North Carolina",3/30/2020,residential,8
+251,12/30/2008,male,white,"Transylvania, North Carolina",4/1/2020,foster,7
+252,7/15/2010,female,white,"Haywood, North Carolina",4/2/2020,foster,6
+253,11/20/2019,female,white,"McDowell, North Carolina",4/5/2020,residential,4
+254,11/2/2017,male,white,"Haywood, North Carolina",4/5/2020,foster,1
+255,9/14/2011,other,white,"Burke, North Carolina",4/6/2020,foster,8
+256,4/13/2011,male,white,"Buncome, North Carolina",4/13/2020,foster,7
+257,10/23/2009,female,black,"Transylvania, North Carolina",4/16/2020,foster,6
+258,8/31/2014,male,black,"Buncome, North Carolina",4/18/2020,residential,3
+259,10/6/2009,female,asian,"Polk, North Carolina",4/19/2020,foster,8
+260,4/21/2017,female,amer. Ind.,"Transylvania, North Carolina",4/19/2020,ther. foster,1
+261,9/28/2016,male,white,"Rutherford, North Carolina",4/22/2020,foster,2
+262,4/19/2015,female,white,"McDowell, North Carolina",4/27/2020,residential,2
+263,9/20/2018,female,white,"Buncome, North Carolina",5/3/2020,foster,3
+264,2/20/2014,male,white,"McDowell, North Carolina",5/5/2020,foster,4
+265,3/3/2014,other,white,"Burke, North Carolina",5/9/2020,foster,8
+266,5/22/2012,male,white,"Henderson, North Carolina",5/10/2020,foster,7
+267,1/11/2018,female,black,"Rutherford, North Carolina",5/11/2020,residential,3
+268,9/8/2016,female,black,"Haywood, North Carolina",5/13/2020,foster,2
+269,4/10/2014,male,asian,"Polk, North Carolina",5/14/2020,foster,4
+270,7/15/2015,female,latino,"Burke, North Carolina",5/17/2020,foster,8
+271,6/12/2019,female,white,"Henderson, North Carolina",5/25/2020,residential,2
+272,1/7/2016,male,white,"Transylvania, North Carolina",5/27/2020,foster,3
+273,6/7/2015,male,white,"Haywood, North Carolina",5/28/2020,foster,5
+274,10/20/2015,female,white,"Rutherford, North Carolina",5/30/2020,ther. foster,1
+275,5/9/2009,male,white,"Buncome, North Carolina",5/31/2020,residential,8
+276,8/13/2010,female,white,"Polk, North Carolina",6/3/2020,foster,7
+277,1/13/2012,female,black,"McDowell, North Carolina",6/5/2020,foster,5
+278,4/28/2008,female,black,"Buncome, North Carolina",6/5/2020,foster,6
+279,8/31/2014,male,asian,"Transylvania, North Carolina",6/8/2020,residential,4
+280,1/28/2015,female,latino,"Transylvania, North Carolina",6/11/2020,foster,8
+281,2/19/2009,male,white,"Buncome, North Carolina",6/13/2020,foster,7
+282,8/23/2014,male,white,"Rutherford, North Carolina",6/14/2020,foster,6
+283,9/20/2018,female,white,"Transylvania, North Carolina",6/16/2020,residential,4
+284,3/2/2012,female,white,"Polk, North Carolina",6/21/2020,foster,4
+285,4/15/2008,male,white,"Polk, North Carolina",6/22/2020,foster,8
+286,6/6/2013,male,white,"Burke, North Carolina",6/24/2020,foster,7
+287,6/25/2017,male,black,"Buncome, North Carolina",6/25/2020,foster,4
+288,5/1/2016,female,black,"Buncome, North Carolina",7/3/2020,residential,2
+289,5/9/2009,male,asian,"Polk, North Carolina",7/6/2020,foster,4
+290,3/2/2010,female,amer. Ind.,"Buncome, North Carolina",7/8/2020,foster,8
+291,6/6/2011,male,white,"Polk, North Carolina",7/11/2020,foster,7
+292,5/23/2020,female,white,"Burke, North Carolina",7/12/2020,residential,2
+293,12/28/2018,female,white,"Buncome, North Carolina",7/14/2020,ther. foster,3
+294,6/25/2017,male,white,"Transylvania, North Carolina",7/17/2020,foster,2
+295,3/17/2018,male,white,"Henderson, North Carolina",7/17/2020,foster,4
+296,6/19/2008,male,white,"McDowell, North Carolina",7/20/2020,foster,6
+297,4/10/2014,female,black,"Henderson, North Carolina",7/20/2020,residential,7
+298,1/8/2012,male,black,"Buncome, North Carolina",7/23/2020,foster,5
+299,1/21/2017,female,asian,"Henderson, North Carolina",7/25/2020,foster,1
+300,4/13/2019,female,amer. Ind.,"Polk, North Carolina",7/26/2020,residential,2
+301,3/2/2012,male,white,"Henderson, North Carolina",7/28/2020,foster,7
+302,1/28/2015,male,white,"Buncome, North Carolina",8/3/2020,foster,5
+303,12/1/2013,male,white,"Transylvania, North Carolina",8/3/2020,foster,6
+304,7/15/2012,female,white,"Rutherford, North Carolina",8/6/2020,residential,4
+305,9/21/2009,male,white,"Rutherford, North Carolina",8/14/2020,foster,8
+306,4/12/2009,female,white,"McDowell, North Carolina",8/18/2020,foster,7
+307,12/3/2018,male,black,"Burke, North Carolina",8/19/2020,foster,2
+308,10/20/2015,male,black,"Rutherford, North Carolina",8/25/2020,foster,2
+309,1/17/2018,male,asian,"Buncome, North Carolina",8/28/2020,foster,2
+310,6/29/2009,female,amer. Ind.,"Henderson, North Carolina",8/28/2020,foster,8
+311,3/2/2010,female,white,"Polk, North Carolina",8/28/2020,residential,4
+312,5/1/2016,female,white,"Transylvania, North Carolina",8/31/2020,foster,1
+313,2/18/2019,male,white,"McDowell, North Carolina",9/3/2020,foster,3
+314,8/20/2017,female,white,"Burke, North Carolina",9/3/2020,residential,2
+315,1/8/2020,male,white,"Polk, North Carolina",9/5/2020,foster,2
+316,7/15/2010,female,white,"Rutherford, North Carolina",9/14/2020,residential,6
+317,1/28/2019,female,black,"Buncome, North Carolina",9/14/2020,foster,1
+318,12/1/2013,female,black,"Transylvania, North Carolina",9/17/2020,foster,4
+319,5/3/2018,male,latino,"Burke, North Carolina",9/17/2020,foster,3
+320,2/6/2019,female,latino,"Burke, North Carolina",9/25/2020,foster,2
+321,10/22/2016,female,white,"Buncome, North Carolina",9/26/2020,residential,2
+322,1/28/2015,male,white,"Transylvania, North Carolina",9/29/2020,foster,6
+323,1/28/2019,female,white,"Polk, North Carolina",10/6/2020,foster,2
+324,8/23/2014,female,white,"Rutherford, North Carolina",10/9/2020,foster,4
+325,8/29/2015,male,white,"Buncome, North Carolina",10/12/2020,foster,2
+326,6/10/2010,male,white,"Henderson, North Carolina",10/12/2020,residential,8
+327,12/1/2013,female,black,"Transylvania, North Carolina",10/15/2020,foster,6
+328,10/24/2011,male,black,"Transylvania, North Carolina",10/16/2020,foster,5
+329,3/10/2018,female,asian,"McDowell, North Carolina",10/19/2020,foster,1
+330,12/13/2017,other,amer. Ind.,"Burke, North Carolina",10/26/2020,foster,4
+331,9/10/2016,male,white,"Burke, North Carolina",10/26/2020,residential,3
+332,5/22/2020,male,white,"Rutherford, North Carolina",10/29/2020,foster,1
+333,2/19/2009,female,white,"Transylvania, North Carolina",11/1/2020,foster,5
+334,7/15/2012,male,white,"Rutherford, North Carolina",11/7/2020,residential,4
+335,11/28/2019,female,white,"Madison, North Carolina",11/10/2020,foster,3
+336,12/13/2016,male,white,"McDowell, North Carolina",11/14/2020,foster,3
+337,11/2/2017,male,black,"Polk, North Carolina",11/20/2020,foster,2
+338,11/11/2009,female,black,"Rutherford, North Carolina",11/23/2020,residential,5
+339,2/17/2019,male,asian,"Madison, North Carolina",11/26/2020,foster,4
+340,5/27/2014,female,amer. Ind.,"Buncome, North Carolina",11/27/2020,foster,7
+341,6/12/2019,female,more than one,"Rutherford, North Carolina",11/27/2020,foster,1
+342,10/24/2011,male,more than one,"Transylvania, North Carolina",11/30/2020,residential,6
+343,9/10/2016,other,more than one,"Burke, North Carolina",12/10/2020,foster,4
+344,3/17/2018,male,latino,"Rutherford, North Carolina",12/13/2020,foster,2
+345,10/20/2015,female,black,"McDowell, North Carolina",12/17/2020,residential,3
+346,1/31/2010,male,black,"Transylvania, North Carolina",12/17/2020,foster,8
+347,9/8/2016,female,asian,"Polk, North Carolina",12/19/2020,foster,1
+348,3/30/2013,male,black,"Buncome, North Carolina",12/23/2020,foster,5
+349,9/16/2011,female,black,"Haywood, North Carolina",12/26/2020,foster,4
+352,12/4/2005,male,white,"Madison, North Carolina",4/5/2020,residential,6
+353,8/3/2005,female,black,"Henderson, North Carolina",10/27/2019,residential,7
+354,11/4/2005,male,white,"Buncome, North Carolina",6/28/2020,residential,8
+355,8/26/2005,female,white,"Polk, North Carolina",4/27/2020,residential,4
+356,4/14/2005,male,white,"McDowell, North Carolina",10/9/2020,residential,7
+357,3/29/2005,female,black,"McDowell, North Carolina",2/26/2020,foster,6
+358,12/21/2004,male,asian,"Madison, North Carolina",11/6/2020,foster,6
+359,7/30/2004,female,amer. Ind.,"Madison, North Carolina",10/12/2019,foster,6
+360,4/9/2004,male,latino,"Buncome, North Carolina",11/5/2019,ther. foster,7
+361,7/24/2003,female,latino,"Transylvania, North Carolina",8/2/2020,residential,8
+362,3/31/2003,male,white,"Buncome, North Carolina",9/22/2020,residential,4
+363,2/21/2003,female,white,"Transylvania, North Carolina",1/11/2020,residential,7
+364,12/28/2005,male,white,"Buncome, North Carolina",3/13/2020,residential,6
+365,6/27/2005,female,black,"Madison, North Carolina",4/22/2019,residential,6
+366,2/26/2005,male,white,"Henderson, North Carolina",12/18/2020,foster,6
+367,12/25/2005,female,white,"Henderson, North Carolina",4/5/2020,foster,7
+368,11/26/2005,male,white,"McDowell, North Carolina",5/11/2020,foster,8
+369,9/17/2005,female,black,"Buncome, North Carolina",5/14/2020,ther. foster,4
+370,9/5/2005,male,asian,"Polk, North Carolina",11/20/2019,residential,7
+371,4/20/2005,female,amer. Ind.,"Haywood, North Carolina",12/13/2019,residential,6
+372,1/12/2005,male,latino,"Haywood, North Carolina",9/5/2019,residential,6
+373,8/21/2004,female,latino,"Haywood, North Carolina",2/22/2020,residential,6
+374,5/1/2004,male,white,"Buncome, North Carolina",9/8/2020,residential,7
+375,8/15/2003,female,white,"Buncome, North Carolina",2/7/2020,foster,8
+376,4/22/2003,male,white,"Buncome, North Carolina",9/22/2020,foster,4
+377,3/15/2003,female,black,"Buncome, North Carolina",6/25/2020,foster,7
+378,1/19/2006,male,white,"Buncome, North Carolina",7/31/2020,ther. foster,6
+379,1/18/2006,female,white,"Buncome, North Carolina",9/12/2020,residential,6
+380,12/20/2005,male,white,"Buncome, North Carolina",2/23/2020,residential,6
+381,10/11/2005,female,black,"Buncome, North Carolina",6/24/2019,residential,7
+382,9/29/2005,male,asian,"Haywood, North Carolina",2/19/2020,residential,8
+383,5/14/2005,female,amer. Ind.,"Haywood, North Carolina",7/8/2020,residential,4
+384,2/5/2005,male,latino,"Haywood, North Carolina",11/26/2020,foster,7
+385,9/14/2004,female,latino,"Buncome, North Carolina",4/24/2020,foster,6
+386,5/25/2004,other,white,"Madison, North Carolina",4/26/2020,foster,6
+387,9/8/2003,female,white,"Henderson, North Carolina",7/19/2019,ther. foster,6
+388,5/16/2003,male,white,"Buncome, North Carolina",1/3/2020,residential,7
+389,4/8/2003,female,black,"Polk, North Carolina",9/19/2019,residential,8
+390,2/12/2006,male,white,"McDowell, North Carolina",5/25/2019,residential,4
+391,8/11/2006,female,white,"McDowell, North Carolina",8/14/2020,residential,7
+392,2/10/2006,male,white,"Madison, North Carolina",6/30/2020,residential,6
+393,2/9/2006,female,black,"Madison, North Carolina",7/17/2020,foster,6
+394,1/11/2006,male,asian,"Buncome, North Carolina",6/19/2019,foster,6
+395,11/2/2005,female,amer. Ind.,"Transylvania, North Carolina",11/30/2019,foster,7
+396,10/21/2005,male,latino,"Buncome, North Carolina",8/9/2019,ther. foster,8
+397,6/5/2005,female,latino,"Transylvania, North Carolina",3/26/2019,residential,4
+398,2/27/2005,male,white,"Buncome, North Carolina",1/30/2020,residential,7
+399,10/6/2004,female,white,"Madison, North Carolina",6/12/2019,residential,6
+400,6/16/2004,male,white,"Henderson, North Carolina",10/28/2019,residential,6
+401,9/30/2003,female,black,"Henderson, North Carolina",7/3/2019,residential,6
+402,6/7/2003,male,white,"McDowell, North Carolina",11/27/2019,foster,7
+403,4/30/2003,other,white,"Buncome, North Carolina",8/4/2019,foster,8
+404,3/6/2006,male,white,"Polk, North Carolina",4/9/2019,foster,4
+405,11/5/2006,female,black,"Haywood, North Carolina",4/18/2019,ther. foster,7
+406,2/4/2006,male,asian,"Haywood, North Carolina",1/4/2020,residential,6
+407,11/26/2005,female,amer. Ind.,"Haywood, North Carolina",8/29/2019,residential,6
+408,11/14/2005,male,latino,"Buncome, North Carolina",5/5/2019,residential,6
+409,6/29/2005,female,latino,"Buncome, North Carolina",3/18/2020,residential,7
+410,3/23/2005,male,white,"Buncome, North Carolina",8/27/2019,residential,8
+411,10/30/2004,female,more than one,"Buncome, North Carolina",5/16/2019,foster,4
+412,7/10/2004,male,white,"Buncome, North Carolina",9/28/2019,foster,7
+413,10/24/2003,female,black,"Buncome, North Carolina",7/2/2019,foster,6
+414,7/1/2003,male,white,"Buncome, North Carolina",12/24/2019,ther. foster,6
+415,5/24/2003,female,white,"Buncome, North Carolina",4/7/2020,residential,6
+416,3/30/2006,male,white,"Haywood, North Carolina",1/14/2020,residential,7
+417,3/29/2006,other,black,"Haywood, North Carolina",2/1/2020,residential,8
+418,1/28/2006,male,asian,"Haywood, North Carolina",7/1/2019,residential,4
+419,5/27/2006,female,amer. Ind.,"Buncome, North Carolina",4/3/2020,residential,7
+420,2/26/2006,male,latino,"Madison, North Carolina",6/1/2019,foster,6
+421,12/18/2005,female,latino,"Henderson, North Carolina",4/14/2020,foster,6
+422,12/6/2005,male,white,"Buncome, North Carolina",8/9/2019,foster,6
+423,7/21/2005,female,white,"Polk, North Carolina",4/8/2019,ther. foster,7
+424,4/14/2005,male,white,"McDowell, North Carolina",10/4/2019,residential,8
+425,11/21/2004,female,black,"McDowell, North Carolina",7/25/2019,residential,4
+426,8/1/2004,male,white,"Madison, North Carolina",8/22/2019,residential,7
+427,11/15/2003,female,white,"Madison, North Carolina",11/8/2019,residential,6
+428,7/23/2003,male,more than one,"Buncome, North Carolina",9/5/2019,residential,6
+429,6/15/2003,female,black,"Transylvania, North Carolina",7/23/2019,foster,6
+430,4/21/2006,male,asian,"Buncome, North Carolina",3/24/2020,foster,7
+431,4/20/2006,other,amer. Ind.,"Transylvania, North Carolina",7/2/2019,foster,8
+432,3/22/2006,male,latino,"Buncome, North Carolina",4/30/2020,ther. foster,4
+433,1/11/2006,female,latino,"Madison, North Carolina",11/21/2019,residential,7
+434,12/30/2005,male,white,"Henderson, North Carolina",7/23/2020,residential,6
+435,8/14/2005,female,white,"Henderson, North Carolina",5/22/2020,residential,6
+436,5/8/2005,male,white,"McDowell, North Carolina",11/3/2020,residential,6
+437,12/15/2004,female,black,"Buncome, North Carolina",3/22/2020,residential,7
+438,8/25/2004,male,white,"Polk, North Carolina",12/1/2020,foster,8
+439,12/9/2003,female,white,"Haywood, North Carolina",11/6/2019,foster,4
+440,8/16/2003,male,white,"Haywood, North Carolina",11/30/2019,foster,7
+441,7/9/2003,female,black,"Haywood, North Carolina",8/27/2020,ther. foster,6
+442,5/15/2006,male,asian,"Buncome, North Carolina",10/17/2020,residential,6
+443,5/14/2006,female,amer. Ind.,"Buncome, North Carolina",2/5/2020,residential,6
+444,10/13/2006,male,latino,"Buncome, North Carolina",4/7/2020,residential,7
+445,5/12/2006,female,latino,"Buncome, North Carolina",5/17/2019,residential,8
+446,4/13/2006,male,white,"Buncome, North Carolina",1/12/2020,residential,4
+447,2/2/2006,female,white,"Buncome, North Carolina",4/30/2020,foster,7
+448,1/21/2006,other,more than one,"Buncome, North Carolina",6/5/2020,foster,6
+449,9/5/2005,male,more than one,"Buncome, North Carolina",6/8/2020,foster,6
+450,5/30/2005,female,white,"Haywood, North Carolina",12/15/2019,ther. foster,6
+451,1/6/2005,other,black,"Haywood, North Carolina",1/7/2020,residential,7
+452,9/16/2004,female,asian,"Haywood, North Carolina",9/30/2019,residential,8
