@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statistics Fundamentals - Complete Notes</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+        }
+        
+        h2 {
+            color: #2980b9;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            border-left: 5px solid #3498db;
+            padding-left: 15px;
+        }
+        
+        h3 {
+            color: #34495e;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        
+        .formula {
+            background-color: #ecf0f1;
+            padding: 15px;
+            margin: 20px 0;
+            border-left: 4px solid #3498db;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+        }
+        
+        .example {
+            background-color: #e8f5e9;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+            border: 1px solid #4caf50;
+        }
+        
+        .example-title {
+            font-weight: bold;
+            color: #2e7d32;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #3498db;
+            color: white;
+            font-weight: bold;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        .diagram {
+            margin: 30px 0;
+            padding: 20px;
+            background-color: #fafafa;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+        }
+        
+        canvas {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+        }
+        
+        .note {
+            background-color: #fff3cd;
+            padding: 15px;
+            margin: 20px 0;
+            border-left: 4px solid #ffc107;
+            border-radius: 3px;
+        }
+        
+        .note-title {
+            font-weight: bold;
+            color: #856404;
+            margin-bottom: 8px;
+        }
+        
+        ul, ol {
+            margin-left: 30px;
+            margin-bottom: 15px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        .comparison {
+            background-color: #e3f2fd;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+            border: 1px solid #2196f3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Statistics Fundamentals for Data Science</h1>
+        
+        <h2>What is Statistics and Why is it Important in Data Science?</h2>
+        <p>Statistics is the science of collecting, organizing, analyzing, interpreting, and presenting data. It provides us with tools and methods to understand patterns, trends, and relationships in data, which helps us make informed decisions based on evidence rather than guesses.</p>
+        
+        <p>In Data Science, statistics is the backbone of all analysis. Without statistics, we cannot:</p>
+        <ul>
+            <li>Understand what our data is telling us</li>
+            <li>Identify patterns and trends</li>
+            <li>Make predictions about future outcomes</li>
+            <li>Test whether our assumptions are correct</li>
+            <li>Communicate findings effectively</li>
+        </ul>
+        
+        <p>Think of statistics as the language of data. Just as we need grammar to understand sentences, we need statistics to understand data.</p>
+        
+        <h2>Measures of Central Tendency</h2>
+        <p>Central tendency tells us about the center or middle of our data. It answers the question: "What is a typical value in this dataset?"</p>
+        
+        <h3>Mean (Average)</h3>
+        <p>The mean is what most people call the average. You add up all the values and divide by how many values you have.</p>
+        
+        <div class="formula">
+Mean = Sum of all values / Number of values
+Mean = (x₁ + x₂ + x₃ + ... + xₙ) / n
+        </div>
+        
+        <div class="example">
+            <div class="example-title">Example:</div>
+            <p>Test scores of 5 students: 85, 90, 78, 92, 85</p>
+            <p>Mean = (85 + 90 + 78 + 92 + 85) / 5 = 430 / 5 = 86</p>
+            <p>The average test score is 86.</p>
+        </div>
+        
+        <h3>Median (Middle Value)</h3>
+        <p>The median is the middle value when you arrange all values in order from smallest to largest. If you have an even number of values, the median is the average of the two middle values.</p>
+        
+        <div class="example">
+            <div class="example-title">Example:</div>
+            <p>Same test scores arranged in order: 78, 85, 85, 90, 92</p>
+            <p>The middle value is 85, so the median is 85.</p>
+            <p>If we had 6 scores: 78, 85, 85, 90, 92, 95</p>
+            <p>The two middle values are 85 and 90, so median = (85 + 90) / 2 = 87.5</p>
+        </div>
+        
+        <h3>Mode (Most Frequent Value)</h3>
+        <p>The mode is the value that appears most often in your data. A dataset can have one mode, more than one mode, or no mode at all.</p>
+        
+        <div class="example">
+            <div class="example-title">Example:</div>
+            <p>Test scores: 85, 90, 78, 92, 85</p>
+            <p>The mode is 85 because it appears twice, more than any other value.</p>
+        </div>
+        
+        <h2>Measures of Variability</h2>
+        <p>Variability tells us how spread out our data is. Two datasets can have the same mean but very different spreads.</p>
+        
+        <h3>Range</h3>
+        <p>The range is the simplest measure of spread. It is the difference between the largest and smallest values.</p>
+        
+        <div class="formula">
+Range = Maximum value - Minimum value
+        </div>
+        
+        <div class="example">
+            <div class="example-title">Example:</div>
+            <p>Test scores: 78, 85, 85, 90, 92</p>
+            <p>Range = 92 - 78 = 14</p>
+        </div>
+        
+        <h3>Variance</h3>
+        <p>Variance measures how far each number in the dataset is from the mean, on average. It tells us how much the data varies from the average value. A higher variance means data points are more spread out from the mean.</p>
+        
+        <div class="formula">
+Variance (σ²) = Σ(xᵢ - mean)² / n
+
+Where:
+- xᵢ = each individual value
+- mean = average of all values
+- n = number of values
+- Σ = sum of all
+        </div>
+        
+        <p>Steps to calculate variance:</p>
+        <ol>
+            <li>Find the mean of all values</li>
+            <li>Subtract the mean from each value</li>
+            <li>Square each result</li>
+            <li>Add all the squared results</li>
+            <li>Divide by the number of values</li>
+        </ol>
+        
+        <h3>Standard Deviation</h3>
+        <p>Standard deviation is simply the square root of variance. It is more useful than variance because it is in the same units as our original data, making it easier to interpret.</p>
+        
+        <div class="formula">
+Standard Deviation (σ) = √Variance
+        </div>
+        
+        <div class="example">
+            <div class="example-title">Example with Monthly Sales Data:</div>
+            <p>Company A Sales (in thousands): 50, 52, 51, 53, 49</p>
+            <p>Company B Sales (in thousands): 40, 60, 45, 55, 50</p>
+            
+            <p><strong>Company A Calculations:</strong></p>
+            <p>Step 1: Mean = (50 + 52 + 51 + 53 + 49) / 5 = 255 / 5 = 51</p>
+            <p>Step 2: Deviations from mean:</p>
+            <ul>
+                <li>50 - 51 = -1</li>
+                <li>52 - 51 = 1</li>
+                <li>51 - 51 = 0</li>
+                <li>53 - 51 = 2</li>
+                <li>49 - 51 = -2</li>
+            </ul>
+            <p>Step 3: Square each deviation:</p>
+            <ul>
+                <li>(-1)² = 1</li>
+                <li>(1)² = 1</li>
+                <li>(0)² = 0</li>
+                <li>(2)² = 4</li>
+                <li>(-2)² = 4</li>
+            </ul>
+            <p>Step 4: Sum of squared deviations = 1 + 1 + 0 + 4 + 4 = 10</p>
+            <p>Step 5: Variance = 10 / 5 = 2</p>
+            <p>Step 6: Standard Deviation = √2 = 1.41</p>
+            
+            <p><strong>Company B Calculations:</strong></p>
+            <p>Step 1: Mean = (40 + 60 + 45 + 55 + 50) / 5 = 250 / 5 = 50</p>
+            <p>Step 2: Deviations from mean:</p>
+            <ul>
+                <li>40 - 50 = -10</li>
+                <li>60 - 50 = 10</li>
+                <li>45 - 50 = -5</li>
+                <li>55 - 50 = 5</li>
+                <li>50 - 50 = 0</li>
+            </ul>
+            <p>Step 3: Square each deviation:</p>
+            <ul>
+                <li>(-10)² = 100</li>
+                <li>(10)² = 100</li>
+                <li>(-5)² = 25</li>
+                <li>(5)² = 25</li>
+                <li>(0)² = 0</li>
+            </ul>
+            <p>Step 4: Sum of squared deviations = 100 + 100 + 25 + 25 + 0 = 250</p>
+            <p>Step 5: Variance = 250 / 5 = 50</p>
+            <p>Step 6: Standard Deviation = √50 = 7.07</p>
+        </div>
+        
+        <div class="comparison">
+            <h3>Comparison and Interpretation:</h3>
+            <table>
+                <tr>
+                    <th>Metric</th>
+                    <th>Company A</th>
+                    <th>Company B</th>
+                </tr>
+                <tr>
+                    <td>Mean Sales</td>
+                    <td>51 thousand</td>
+                    <td>50 thousand</td>
+                </tr>
+                <tr>
+                    <td>Variance</td>
+                    <td>2</td>
+                    <td>50</td>
+                </tr>
+                <tr>
+                    <td>Standard Deviation</td>
+                    <td>1.41 thousand</td>
+                    <td>7.07 thousand</td>
+                </tr>
+            </table>
+            
+            <p><strong>What does this tell us?</strong></p>
+            <p>Both companies have almost the same average sales (around 50-51 thousand), but their consistency is very different.</p>
+            
+            <p><strong>Company A:</strong> Has a variance of 2 and standard deviation of 1.41. This means their sales are very consistent and predictable. Sales typically vary by only about 1,410 units from the average. This company has stable and reliable performance.</p>
+            
+            <p><strong>Company B:</strong> Has a variance of 50 and standard deviation of 7.07. This means their sales fluctuate significantly. Sales can vary by about 7,070 units from the average. This company has unpredictable and volatile performance.</p>
+            
+            <p><strong>Which is better?</strong> Company A is better because it has lower variance and standard deviation. This means more predictable sales, easier planning, and lower risk. Investors and managers prefer consistency because it means fewer surprises and better ability to forecast future performance.</p>
+        </div>
+        
+        <h2>Measures of Shape: Skewness and Kurtosis</h2>
+        
+        <h3>Skewness</h3>
+        <p>Skewness tells us about the asymmetry of our data distribution. It shows whether data is concentrated more on one side than the other.</p>
+        
+        <div class="diagram">
+            <h4>Understanding Skewness with Real-World Examples</h4>
+            <canvas id="skewnessCanvas" width="800" height="600"></canvas>
+            <div style="margin-top: 20px;">
+                <p><strong>Reading the Diagram:</strong></p>
+                
+                <p><strong>Top Graph - Negative Skew (Left Skewed):</strong></p>
+                <ul>
+                    <li>The blue curve shows a negatively skewed distribution</li>
+                    <li>The tail extends toward the left (lower values)</li>
+                    <li>Most data points cluster on the right side (higher values)</li>
+                    <li>The green line (mean) is pulled left by the tail, below the red line (median)</li>
+                    <li>Real-world example: Retirement age in developed countries. Most people retire around 65-70 years, but some retire very early (creating the left tail). The few early retirees pull the mean age down below the median.</li>
+                </ul>
+                
+                <p><strong>Middle Graph - No Skew (Symmetric):</strong></p>
+                <ul>
+                    <li>The blue curve shows a perfectly symmetric distribution</li>
+                    <li>Data is balanced on both sides</li>
+                    <li>Mean (green line) and median (red line) are at the same position</li>
+                    <li>Real-world example: Heights of adult males in a population. Most men are close to average height, with roughly equal numbers being shorter and taller.</li>
+                </ul>
+                
+                <p><strong>Bottom Graph - Positive Skew (Right Skewed):</strong></p>
+                <ul>
+                    <li>The blue curve shows a positively skewed distribution</li>
+                    <li>The tail extends toward the right (higher values)</li>
+                    <li>Most data points cluster on the left side (lower values)</li>
+                    <li>The green line (mean) is pulled right by the tail, above the red line (median)</li>
+                    <li>Real-world example: Income distribution. Most people earn moderate salaries, but a few people earn extremely high incomes (billionaires), creating a long right tail. These high earners pull the mean income far above the median income.</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="note">
+            <div class="note-title">Key Points about Skewness:</div>
+            <ul>
+                <li>Negative skew: Mean is less than median. The tail points left.</li>
+                <li>Zero skew: Mean equals median. Distribution is symmetric.</li>
+                <li>Positive skew: Mean is greater than median. The tail points right.</li>
+                <li>The longer tail always pulls the mean toward it, away from the median.</li>
+            </ul>
+        </div>
+        
+        <h3>Kurtosis</h3>
+        <p>Kurtosis measures the "tailedness" of the distribution. It tells us whether our data has heavy tails (more extreme values) or light tails (fewer extreme values) compared to a normal distribution.</p>
+        
+        <div class="diagram">
+            <h4>Understanding Kurtosis with Real-World Examples</h4>
+            <canvas id="kurtosisCanvas" width="800" height="500"></canvas>
+            <div style="margin-top: 20px;">
+                <p><strong>Reading the Diagram:</strong></p>
+                
+                <p>All three distributions shown have the same mean (center) at zero and the same spread, but differ in their shapes.</p>
+                
+                <p><strong>Red Curve - High Kurtosis (Leptokurtic):</strong></p>
+                <ul>
+                    <li>This curve is taller and narrower in the center</li>
+                    <li>It has fatter tails on both sides</li>
+                    <li>This means: most values are very close to the average, but there are more extreme outliers</li>
+                    <li>Real-world example: Stock market returns. On most days, stock prices change by small amounts (the tall center), but occasionally there are crashes or booms with huge changes (the fat tails).</li>
+                </ul>
+                
+                <p><strong>Blue Curve - Normal Kurtosis (Mesokurtic):</strong></p>
+                <ul>
+                    <li>This is the middle curve with moderate height and width</li>
+                    <li>It represents the standard normal distribution</li>
+                    <li>Balanced number of extreme values</li>
+                    <li>Real-world example: Test scores in a well-designed exam. Most students score near the average, with predictable numbers scoring very high or very low.</li>
+                </ul>
+                
+                <p><strong>Green Curve - Low Kurtosis (Platykurtic):</strong></p>
+                <ul>
+                    <li>This curve is flatter and wider</li>
+                    <li>It has thinner tails</li>
+                    <li>This means: values are more evenly spread out, with fewer extreme outliers</li>
+                    <li>Real-world example: Uniform distribution of random numbers. For example, rolling a fair die gives values from 1 to 6 with equal probability, with no extreme values or clustering.</li>
+                </ul>
+                
+                <p><strong>Practical Interpretation:</strong></p>
+                <p>If you are managing risk (like in finance), high kurtosis is dangerous because it means more extreme events (like market crashes) than you might expect from a normal distribution. Low kurtosis means your data is more predictable with fewer surprises.</p>
+            </div>
+        </div>
+        
+        <h2>Percentiles and Their Interpretation</h2>
+        <p>A percentile tells us what percentage of the data falls below a particular value. It is a way to understand the position of a value within a dataset.</p>
+        
+        <p><strong>What does it mean?</strong></p>
+        <p>If you score in the 75th percentile on a test, it means you scored better than 75 percent of all test takers. Only 25 percent scored better than you.</p>
+        
+        <div class="example">
+            <div class="example-title">Step-by-Step Calculation of Percentiles:</div>
+            <p>Let's find the 75th percentile of these test scores:</p>
+            <p>Data: 65, 70, 75, 80, 85, 90, 95, 100, 105, 110</p>
+            
+            <p><strong>Step 1:</strong> Arrange data in ascending order (already done above)</p>
+            <p><strong>Step 2:</strong> Use the formula: Position = (P/100) × (n + 1)</p>
+            <p>Where P = desired percentile (75) and n = number of values (10)</p>
+            <p>Position = (75/100) × (10 + 1) = 0.75 × 11 = 8.25</p>
+            
+            <p><strong>Step 3:</strong> This means the 75th percentile is between the 8th and 9th values</p>
+            <p>8th value = 100, 9th value = 105</p>
+            
+            <p><strong>Step 4:</strong> Since position is 8.25, we take 25 percent of the way between these values</p>
+            <p>75th percentile = 100 + 0.25 × (105 - 100) = 100 + 1.25 = 101.25</p>
+            
+            <p><strong>Interpretation:</strong> 75 percent of students scored 101.25 or below. Only 25 percent scored higher than 101.25.</p>
+        </div>
+        
+        <div class="note">
+            <div class="note-title">Common Percentiles:</div>
+            <ul>
+                <li>25th percentile (Q1): First Quartile - 25 percent of data is below this</li>
+                <li>50th percentile (Q2): Median - Half the data is below this</li>
+                <li>75th percentile (Q3): Third Quartile - 75 percent of data is below this</li>
+                <li>90th percentile: Commonly used in performance metrics</li>
+                <li>95th percentile: Often used in health metrics and standards</li>
+            </ul>
+        </div>
+        
+        <h2>Quartiles and Interquartile Range</h2>
+        
+        <h3>Quartiles</h3>
+        <p>Quartiles divide your data into four equal parts. Each part contains 25 percent of the data.</p>
+        
+        <ul>
+            <li><strong>Q1 (First Quartile):</strong> 25th percentile - 25 percent of data is below this value</li>
+            <li><strong>Q2 (Second Quartile):</strong> 50th percentile or Median - 50 percent of data is below this value</li>
+            <li><strong>Q3 (Third Quartile):</strong> 75th percentile - 75 percent of data is below this value</li>
+        </ul>
+        
+        <h3>Interquartile Range (IQR)</h3>
+        <p>The IQR is the range of the middle 50 percent of your data. It tells us how spread out the central half of the data is.</p>
+        
+        <div class="formula">
+IQR = Q3 - Q1
+        </div>
+        
+        <p>The IQR is useful because it is not affected by extreme values (outliers). It gives us a robust measure of spread.</p>
+        
+        <div class="example">
+            <div class="example-title">Example: Calculating Quartiles and IQR</div>
+            <p>Monthly website visitors (in thousands): 10, 15, 18, 22, 25, 28, 30, 35, 40, 45, 50</p>
+            
+            <p><strong>Finding Q1 (25th percentile):</strong></p>
+            <p>Position = (25/100) × (11 + 1) = 3</p>
+            <p>Q1 = 18 thousand visitors</p>
+            
+            <p><strong>Finding Q2 (Median):</strong></p>
+            <p>Position = (50/100) × (11 + 1) = 6</p>
+            <p>Q2 = 28 thousand visitors</p>
+            
+            <p><strong>Finding Q3 (75th percentile):</strong></p>
+            <p>Position = (75/100) × (11 + 1) = 9</p>
+            <p>Q3 = 40 thousand visitors</p>
+            
+            <p><strong>Calculating IQR:</strong></p>
+            <p>IQR = Q3 - Q1 = 40 - 18 = 22 thousand visitors</p>
+            
+            <p><strong>Interpretation:</strong> The middle 50 percent of months have visitor numbers ranging across 22 thousand. This tells us the typical variation in our monthly traffic.</p>
+        </div>
+        
+        <h2>Five Number Summary</h2>
+        <p>The five number summary provides a complete picture of the distribution of data using five key values:</p>
+        
+        <ol>
+            <li><strong>Minimum:</strong> The smallest value in the dataset</li>
+            <li><strong>Q1 (First Quartile):</strong> The 25th percentile</li>
+            <li><strong>Median (Q2):</strong> The middle value or 50th percentile</li>
+            <li><strong>Q3 (Third Quartile):</strong> The 75th percentile</li>
+            <li><strong>Maximum:</strong> The largest value in the dataset</li>
+        </ol>
+        
+        <p>These five numbers give us a quick understanding of the center, spread, and range of our data.</p>
+        
+        <div class="example">
+            <div class="example-title">Example: Using Company Sales Data</div>
+            <p>Let's compare the same two companies from earlier using their five number summary:</p>
+            
+            <p><strong>Company A Monthly Sales (thousands):</strong> 49, 50, 51, 52, 53</p>
+            <ul>
+                <li>Minimum: 49</li>
+                <li>Q1: 49.5</li>
+                <li>Median: 51</li>
+                <li>Q3: 52.5</li>
+                <li>Maximum: 53</li>
+            </ul>
+            
+            <p><strong>Company B Monthly Sales (thousands):</strong> 40, 45, 50, 55, 60</p>
+            <ul>
+                <li>Minimum: 40</li>
+                <li>Q1: 42.5</li>
+                <li>Median: 50</li>
+                <li>Q3: 57.5</li>
+                <li>Maximum: 60</li>
+            </ul>
+            
+            <p><strong>Comparison:</strong></p>
+            <p>Company A's five numbers are all very close together (49 to 53), showing consistent performance. Company B's numbers are much more spread out (40 to 60), showing high variability in sales performance.</p>
+        </div>
+        
+        <h2>Boxplot: Visual Representation of Distribution</h2>
+        <p>A boxplot (also called a box-and-whisker plot) is a visual way to display the five number summary. It helps us see the distribution, spread, and outliers in our data at a glance.</p>
+        
+        <div class="diagram">
+            <h4>Boxplot Comparison: Company A vs Company B</h4>
+            <canvas id="boxplotCanvas" width="800" height="500"></canvas>
+            <div style="margin-top: 20px;">
+                <p><strong>How to Read a Boxplot:</strong></p>
+                
+                <p><strong>The Box:</strong></p>
+                <ul>
+                    <li>The bottom edge of the box is Q1 (25th percentile)</li>
+                    <li>The line inside the box is the Median (50th percentile)</li>
+                    <li>The top edge of the box is Q3 (75th percentile)</li>
+                    <li>The height of the box is the IQR (Q3 - Q1)</li>
+                    <li>The box contains the middle 50 percent of all data</li>
+                </ul>
+                
+                <p><strong>The Whiskers (Lines extending from the box):</strong></p>
+                <ul>
+                    <li>The lower whisker extends down to the minimum value</li>
+                    <li>The upper whisker extends up to the maximum value</li>
+                    <li>The whiskers show the range of the data</li>
+                </ul>
+                
+                <p><strong>Reading the Company A Boxplot (Left, Blue):</strong></p>
+                <ul>
+                    <li>The box is very narrow, showing low variability</li>
+                    <li>Minimum value is at 49 thousand (bottom whisker)</li>
+                    <li>Q1 is at approximately 49.5 thousand (bottom of box)</li>
+                    <li>Median is at 51 thousand (line in middle of box)</li>
+                    <li>Q3 is at approximately 52.5 thousand (top of box)</li>
+                    <li>Maximum value is at 53 thousand (top whisker)</li>
+                    <li>The entire range from minimum to maximum is only 4 thousand</li>
+                    <li>This tight distribution shows Company A has very consistent and predictable sales</li>
+                </ul>
+                
+                <p><strong>Reading the Company B Boxplot (Right, Red):</strong></p>
+                <ul>
+                    <li>The box is much wider, showing high variability</li>
+                    <li>Minimum value is at 40 thousand (bottom whisker)</li>
+                    <li>Q1 is at approximately 42.5 thousand (bottom of box)</li>
+                    <li>Median is at 50 thousand (line in middle of box)</li>
+                    <li>Q3 is at approximately 57.5 thousand (top of box)</li>
+                    <li>Maximum value is at 60 thousand (top whisker)</li>
+                    <li>The range from minimum to maximum is 20 thousand</li>
+                    <li>This wide distribution shows Company B has volatile and unpredictable sales</li>
+                </ul>
+                
+                <p><strong>Key Comparisons:</strong></p>
+                <ul>
+                    <li>Company A's IQR (box height) is about 3 thousand, while Company B's IQR is about 15 thousand</li>
+                    <li>Company A's median is very close to both Q1 and Q3, showing symmetry</li>
+                    <li>Company B's data is spread across a much wider range</li>
+                    <li>Looking at both boxplots side by side clearly shows that Company A has more stable and reliable performance</li>
+                </ul>
+                
+                <p><strong>Practical Business Interpretation:</strong></p>
+                <p>If you were an investor, Company A's narrow boxplot indicates predictable revenue, making it easier to plan and budget. Company B's wide boxplot indicates higher risk - some months are great, but others are poor. This unpredictability makes Company A the safer investment choice.</p>
+            </div>
+        </div>
+        
+        <div class="note">
+            <div class="note-title">Summary: Why These Measures Matter</div>
+            <p>Understanding these statistical measures helps us:</p>
+            <ul>
+                <li>Identify the typical or average value in our data (central tendency)</li>
+                <li>Understand how spread out or variable our data is (variability)</li>
+                <li>Detect the shape and symmetry of our distribution (skewness and kurtosis)</li>
+                <li>Compare different datasets effectively (using all measures together)</li>
+                <li>Make better business decisions based on data patterns</li>
+            </ul>
+            <p>When analyzing any dataset, always look at multiple measures together. The mean alone does not tell the whole story - you need to understand the spread, shape, and distribution to make informed conclusions.</p>
+        </div>
+    </div>
+    
+    <script>
+        // Draw Skewness Diagrams
+        function drawSkewness() {
+            const canvas = document.getElementById('skewnessCanvas');
+            const ctx = canvas.getContext('2d');
+            const width = canvas.width;
+            const height = canvas.height;
+            
+            // Clear canvas
+            ctx.fillStyle = '#fafafa';
+            ctx.fillRect(0, 0, width, height);
+            
+            // Helper function to draw a skewed distribution
+            function drawDistribution(yOffset, skew, title) {
+                const centerX = width / 2;
+                const baseY = yOffset + 120;
+                const scale = 100;
+                
+                // Draw title
+                ctx.fillStyle = '#000';
+                ctx.font = 'bold 16px Arial';
+                ctx.textAlign = 'center';
+                ctx.fillText(title, centerX, yOffset + 20);
+                
+                // Draw curve
+                ctx.beginPath();
+                ctx.strokeStyle = '#2196F3';
+                ctx.lineWidth = 3;
+                
+                for (let x = -3; x <= 3; x += 0.05) {
+                    let y;
+                    if (skew < 0) {
+                        // Negative skew
+                        y = Math.exp(-0.5 * Math.pow(x + 0.8, 2)) * (1 + 0.3 * x);
+                    } else if (skew > 0) {
+                        // Positive skew
+                        y = Math.exp(-0.5 * Math.pow(x - 0.8, 2)) * (1 - 0.3 * x);
+                    } else {
+                        // No skew (normal)
+                        y = Math.exp(-0.5 * x * x);
+                    }
+                    
+                    const px = centerX + x * scale;
+                    const py = baseY - y * scale;
+                    
+                    if (x === -3) {
+                        ctx.moveTo(px, py);
+                    } else {
+                        ctx.lineTo(px, py);
+                    }
+                }
+                ctx.stroke();
+                
+                // Draw baseline
+                ctx.beginPath();
+                ctx.strokeStyle = '#333';
+                ctx.lineWidth = 2;
+                ctx.moveTo(centerX - 250, baseY);
+                ctx.lineTo(centerX + 250, baseY);
+                ctx.stroke();
+                
+                // Draw mean and median lines
+                let meanPos, medianPos;
+                if (skew < 0) {
+                    meanPos = centerX - 30;
+                    medianPos = centerX + 10;
+                } else if (skew > 0) {
+                    meanPos = centerX + 30;
+                    medianPos = centerX - 10;
+                } else {
+                    meanPos = centerX;
+                    medianPos = centerX;
+                }
+                
+                // Median line (red)
+                ctx.beginPath();
+                ctx.strokeStyle = '#f44336';
+                ctx.lineWidth = 2;
+                ctx.setLineDash([5, 5]);
+                ctx.moveTo(medianPos, baseY);
+                ctx.lineTo(medianPos, baseY - 100);
+                ctx.stroke();
+                ctx.setLineDash([]);
+                
+                ctx.fillStyle = '#f44336';
+                ctx.font = '12px Arial';
+                ctx.fillText('Median', medianPos, baseY + 15);
+                
+                // Mean line (green)
+                ctx.beginPath();
+                ctx.strokeStyle = '#4CAF50';
+                ctx.lineWidth = 2;
+                ctx.setLineDash([5, 5]);
+                ctx.moveTo(meanPos, baseY);
+                ctx.lineTo(meanPos, baseY - 100);
+                ctx.stroke();
+                ctx.setLineDash([]);
+                
+                ctx.fillStyle = '#4CAF50';
+                ctx.fillText('Mean', meanPos, baseY + 30);
+            }
+            
+            // Draw three distributions
+            drawDistribution(0, -1, 'Negative Skew (Left Skewed)');
+            drawDistribution(200, 0, 'No Skew (Symmetric)');
+            drawDistribution(400, 1, 'Positive Skew (Right Skewed)');
+        }
+        
+        // Draw Kurtosis Diagrams
+        function drawKurtosis() {
+            const canvas = document.getElementById('kurtosisCanvas');
+            const ctx = canvas.getContext('2d');
+            const width = canvas.width;
+            const height = canvas.height;
+            
+            // Clear canvas
+            ctx.fillStyle = '#fafafa';
+            ctx.fillRect(0, 0, width, height);
+            
+            const centerX = width / 2;
+            const baseY = height - 100;
+            const scale = 120;
+            
+            // Draw title
+            ctx.fillStyle = '#000';
+            ctx.font = 'bold 18px Arial';
+            ctx.textAlign = 'center';
+            ctx.fillText('Comparison of Different Kurtosis Levels', centerX, 30);
+            
+            // Draw baseline
+            ctx.beginPath();
+            ctx.strokeStyle = '#333';
+            ctx.lineWidth = 2;
+            ctx.moveTo(centerX - 350, baseY);
+            ctx.lineTo(centerX + 350, baseY);
+            ctx.stroke();
+            
+            // Helper function for normal distribution with different kurtosis
+            function normalDist(x, kurtosis) {
+                if (kurtosis === 'high') {
+                    return Math.exp(-2 * x * x); // Leptokurtic
+                } else if (kurtosis === 'low') {
+                    return Math.exp(-0.3 * x * x); // Platykurtic
+                } else {
+                    return Math.exp(-0.5 * x * x); // Mesokurtic (normal)
+                }
+            }
+            
+            // Draw three distributions
+            const distributions = [
+                { kurtosis: 'high', color: '#f44336', label: 'High Kurtosis (Leptokurtic)', lineWidth: 3 },
+                { kurtosis: 'normal', color: '#2196F3', label: 'Normal Kurtosis (Mesokurtic)', lineWidth: 3 },
+                { kurtosis: 'low', color: '#4CAF50', label: 'Low Kurtosis (Platykurtic)', lineWidth: 3 }
+            ];
+            
+            distributions.forEach(dist => {
+                ctx.beginPath();
+                ctx.strokeStyle = dist.color;
+                ctx.lineWidth = dist.lineWidth;
+                
+                for (let x = -3.5; x <= 3.5; x += 0.05) {
+                    const y = normalDist(x, dist.kurtosis);
+                    const px = centerX + x * scale;
+                    const py = baseY - y * scale * 1.5;
+                    
+                    if (x === -3.5) {
+                        ctx.moveTo(px, py);
+                    } else {
+                        ctx.lineTo(px, py);
+                    }
+                }
+                ctx.stroke();
+            });
+            
+            // Draw legend
+            const legendX = 50;
+            let legendY = 80;
+            
+            distributions.forEach(dist => {
+                ctx.fillStyle = dist.color;
+                ctx.fillRect(legendX, legendY, 30, 15);
+                ctx.fillStyle = '#000';
+                ctx.font = '14px Arial';
+                ctx.textAlign = 'left';
+                ctx.fillText(dist.label, legendX + 40, legendY + 12);
+                legendY += 30;
+            });
+            
+            // Add axis labels
+            ctx.fillStyle = '#666';
+            ctx.font = '12px Arial';
+            ctx.textAlign = 'center';
+            ctx.fillText('-3', centerX - 3 * scale, baseY + 20);
+            ctx.fillText('0', centerX, baseY + 20);
+            ctx.fillText('+3', centerX + 3 * scale, baseY + 20);
+        }
+        
+        // Draw Boxplot
+        function drawBoxplot() {
+            const canvas = document.getElementById('boxplotCanvas');
+            const ctx = canvas.getContext('2d');
+            const width = canvas.width;
+            const height = canvas.height;
+            
+            // Clear canvas
+            ctx.fillStyle = '#ffffff';
+            ctx.fillRect(0, 0, width, height);
+            
+            // Margins - increased bottom margin for labels
+            const margin = { top: 80, right: 80, bottom: 100, left: 100 };
+            const plotWidth = width - margin.left - margin.right;
+            const plotHeight = height - margin.top - margin.bottom;
+            
+            // Draw title
+            ctx.fillStyle = '#000';
+            ctx.font = 'bold 20px Arial';
+            ctx.textAlign = 'center';
+            ctx.fillText('Boxplot Comparison: Company A vs Company B Sales', width / 2, 35);
+            ctx.font = '14px Arial';
+            ctx.fillText('(Monthly Sales in Thousands)', width / 2, 60);
+            
+            // Company A data
+            const companyA = {
+                min: 49,
+                q1: 49.5,
+                median: 51,
+                q3: 52.5,
+                max: 53
+            };
+            
+            // Company B data
+            const companyB = {
+                min: 40,
+                q1: 42.5,
+                median: 50,
+                q3: 57.5,
+                max: 60
+            };
+            
+            // Find overall min and max for scale - increased range
+            const overallMin = 38;
+            const overallMax = 62;
+            
+            // Scale function - with larger plot height
+            function scaleY(value) {
+                return margin.top + plotHeight - ((value - overallMin) / (overallMax - overallMin)) * plotHeight;
+            }
+            
+            // Draw background grid
+            ctx.strokeStyle = '#e0e0e0';
+            ctx.lineWidth = 1;
+            for (let i = overallMin; i <= overallMax; i += 2) {
+                const y = scaleY(i);
+                ctx.beginPath();
+                ctx.moveTo(margin.left, y);
+                ctx.lineTo(margin.left + plotWidth, y);
+                ctx.stroke();
+            }
+            
+            // Draw Y-axis
+            ctx.beginPath();
+            ctx.strokeStyle = '#333';
+            ctx.lineWidth = 2;
+            ctx.moveTo(margin.left, margin.top);
+            ctx.lineTo(margin.left, margin.top + plotHeight);
+            ctx.stroke();
+            
+            // Draw Y-axis labels and ticks
+            ctx.fillStyle = '#333';
+            ctx.font = 'bold 12px Arial';
+            ctx.textAlign = 'right';
+            for (let i = overallMin; i <= overallMax; i += 2) {
+                const y = scaleY(i);
+                ctx.fillText(i.toString(), margin.left - 15, y + 4);
+                
+                // Draw tick
+                ctx.beginPath();
+                ctx.strokeStyle = '#333';
+                ctx.lineWidth = 2;
+                ctx.moveTo(margin.left - 5, y);
+                ctx.lineTo(margin.left, y);
+                ctx.stroke();
+            }
+            
+            // Y-axis label
+            ctx.save();
+            ctx.translate(30, margin.top + plotHeight / 2);
+            ctx.rotate(-Math.PI / 2);
+            ctx.font = 'bold 15px Arial';
+            ctx.textAlign = 'center';
+            ctx.fillStyle = '#000';
+            ctx.fillText('Sales (in Thousands)', 0, 0);
+            ctx.restore();
+            
+            // Function to draw a single boxplot
+            function drawSingleBoxplot(x, data, color, label) {
+                const boxWidth = 100;
+                const whiskerWidth = 60;
+                
+                // Draw whisker (min to q1)
+                ctx.beginPath();
+                ctx.strokeStyle = color;
+                ctx.lineWidth = 3;
+                ctx.moveTo(x, scaleY(data.min));
+                ctx.lineTo(x, scaleY(data.q1));
+                ctx.stroke();
+                
+                // Draw whisker (q3 to max)
+                ctx.beginPath();
+                ctx.moveTo(x, scaleY(data.q3));
+                ctx.lineTo(x, scaleY(data.max));
+                ctx.stroke();
+                
+                // Draw min line
+                ctx.beginPath();
+                ctx.lineWidth = 3;
+                ctx.moveTo(x - whiskerWidth / 2, scaleY(data.min));
+                ctx.lineTo(x + whiskerWidth / 2, scaleY(data.min));
+                ctx.stroke();
+                
+                // Draw max line
+                ctx.beginPath();
+                ctx.moveTo(x - whiskerWidth / 2, scaleY(data.max));
+                ctx.lineTo(x + whiskerWidth / 2, scaleY(data.max));
+                ctx.stroke();
+                
+                // Draw box (IQR)
+                ctx.fillStyle = color + '40'; // Add transparency
+                const boxHeight = scaleY(data.q1) - scaleY(data.q3);
+                ctx.fillRect(x - boxWidth / 2, scaleY(data.q3), boxWidth, boxHeight);
+                ctx.strokeStyle = color;
+                ctx.lineWidth = 3;
+                ctx.strokeRect(x - boxWidth / 2, scaleY(data.q3), boxWidth, boxHeight);
+                
+                // Draw median line (thicker and darker)
+                ctx.beginPath();
+                ctx.strokeStyle = '#000';
+                ctx.lineWidth = 5;
+                ctx.moveTo(x - boxWidth / 2, scaleY(data.median));
+                ctx.lineTo(x + boxWidth / 2, scaleY(data.median));
+                ctx.stroke();
+                
+                // Draw value labels on the right side of each boxplot with better spacing
+                ctx.fillStyle = '#000';
+                ctx.font = 'bold 13px Arial';
+                ctx.textAlign = 'left';
+                const labelOffset = boxWidth / 2 + 15;
+                
+                ctx.fillText('Max: ' + data.max, x + labelOffset, scaleY(data.max) + 5);
+                ctx.fillText('Q3: ' + data.q3, x + labelOffset, scaleY(data.q3) + 5);
+                ctx.fillText('Median: ' + data.median, x + labelOffset, scaleY(data.median) + 5);
+                ctx.fillText('Q1: ' + data.q1, x + labelOffset, scaleY(data.q1) + 5);
+                ctx.fillText('Min: ' + data.min, x + labelOffset, scaleY(data.min) + 5);
+                
+                // Company label at bottom
+                ctx.font = 'bold 18px Arial';
+                ctx.textAlign = 'center';
+                ctx.fillStyle = color;
+                ctx.fillText(label, x, margin.top + plotHeight + 40);
+                
+                // IQR label
+                ctx.font = 'bold 13px Arial';
+                ctx.fillStyle = '#666';
+                const iqr = (data.q3 - data.q1).toFixed(1);
+                ctx.fillText('IQR: ' + iqr, x, margin.top + plotHeight + 60);
+            }
+            
+            // Calculate positions for boxplots with more spacing
+            const companyAX = margin.left + plotWidth * 0.3;
+            const companyBX = margin.left + plotWidth * 0.7;
+            
+            // Draw both boxplots
+            drawSingleBoxplot(companyAX, companyA, '#2196F3', 'Company A');
+            drawSingleBoxplot(companyBX, companyB, '#f44336', 'Company B');
+        }
+        
+        // Draw all diagrams when page loads
+        window.onload = function() {
+            drawSkewness();
+            drawKurtosis();
+            drawBoxplot();
+        };
+    </script>
+</body>
+</html>
